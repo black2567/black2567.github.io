@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1、配置若系统为配置以使用简单命令python，可以通过指定python的位置。如命令为“D:\PY\python first.py”    若配置好，在终端里进入.py文件所在目录，运行“python first.py”即可 2、对字符串的操作​        Title() ：将单词首字母大写​        Upper() ：将字符串全部大写​        Lower() ：将字符串全部小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="长夜未央">
+<meta property="og:url" content="http://example.com/2021/02/01/Python/index.html">
+<meta property="og:site_name" content="长夜未央">
+<meta property="og:description" content="1、配置若系统为配置以使用简单命令python，可以通过指定python的位置。如命令为“D:\PY\python first.py”    若配置好，在终端里进入.py文件所在目录，运行“python first.py”即可 2、对字符串的操作​        Title() ：将单词首字母大写​        Upper() ：将字符串全部大写​        Lower() ：将字符串全部小">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-01T13:45:42.827Z">
+<meta property="article:modified_time" content="2019-04-23T07:25:00.212Z">
+<meta property="article:tag" content="study">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/02/01/Python/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 长夜未央</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">长夜未央</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-04-23 15:25:00" itemprop="dateModified" datetime="2019-04-23T15:25:00+08:00">2019-04-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1、配置"><a href="#1、配置" class="headerlink" title="1、配置"></a>1、配置</h1><p>若系统为配置以使用简单命令python，可以通过指定python的位置。如命令为“D:\PY\python first.py”<br>    若配置好，在终端里进入.py文件所在目录，运行“python first.py”即可</p>
+<h1 id="2、对字符串的操作"><a href="#2、对字符串的操作" class="headerlink" title="2、对字符串的操作"></a>2、对字符串的操作</h1><p>​        Title() ：将单词首字母大写<br>​        Upper() ：将字符串全部大写<br>​        Lower() ：将字符串全部小写<br>​        通过添加制表符或换行符（\t或\n）来添加空白<br>​        Lstrip() ：剔除字符串开头的空白<br>​        Rstrip() ：剔除字符串结尾的空白<br>​        Strip()  ：剔除字符串两端的空白<br>​    单引号与双引号的使用没有严格的规定，但是要具有可识别性。<br>​    通过str()将int类型等转换成string类型的<br>​    使用井号#添加注释</p>
+<h1 id="3、列表-由一系列按特定顺序排列的元素组成。"><a href="#3、列表-由一系列按特定顺序排列的元素组成。" class="headerlink" title="3、列表 由一系列按特定顺序排列的元素组成。"></a>3、列表 由一系列按特定顺序排列的元素组成。</h1><p>​    索引从0开始<br>​        Messages = [’first’,’second’,’third’]<br>​            word里的引号不能直接复制有问题<br>​            print(Messages[0],Messages[1].title(),Messages[2].upper())<br>​            可以使用print(Messages[-1])从后往前输出<br>​        修改列表里的元素，直接对Messages[i]进行赋值，Messages[0] = ‘change’<br>​        末尾添加Messages.append(‘insert’)<br>​        中间插入Messages.insert(0,‘insert’) 在索引0处插入<br>​        删除 del Messages[0];<br>​        使用pop()删除（弹出）列表末尾元素。content = Messages.pop()删除并将删除的内容赋给content。也可以删除任意位置的元素如Messages.pop(1)<br>​        通过元素的值删除，使用remove()如Messages.remove(‘second’)<br>​    对列表进行永久性排列：sort()<br>​        Messages.sort()（从a到z）；<br>​        Messages.sort(reverse=True)（从z到a）按相反顺序排列<br>​    使用sorted()对列表进行临时排序sorted(Messages)<br>​    使用reverse()将列表永久反转，从后往前排列，与字母顺序无关（再用一次则恢复开始的顺序）Messages.reverse()<br>​    使用len()来获取列表的长度，len(Messages)</p>
+<h1 id="4、列表的操作"><a href="#4、列表的操作" class="headerlink" title="4、列表的操作"></a>4、列表的操作</h1><p>messages = [‘first’,’second’,’third’,’fouth’]</p>
+<p>​    循环：for message in messages:<br>​                print(message)<br>​    注意缩进，否则会报错<br>python中注释也需要遵循缩进规则<br>循环时冒号（：）也不要忘记<br>​    函数range()生成数字。生成数字1、2、3、4。<br>​        for value in range(1,5):<br>​            print(value)<br>​    使用range()与list()创建列表：number=list(range(1,6))<br>​        range(2,11,2),从2 开始不断加2 ，直到11。生成2、4、6、8、10<br>​    对数字列表可使用min(),max(),sum()等函数</p>
+<h2 id="列表解析"><a href="#列表解析" class="headerlink" title="列表解析"></a>列表解析</h2><p>​    列表解析将for循环和创建新元素的代码合并成一行，并自动附加新元素<br>​    sequares = [value**2 for value in range(1,11)]<br>​    print(sequares)<br>​    列表名为sequares，结果为1至10的平方。<br> print(messages[0:3])输出前三个值，messages[0,3]为列表前三个值，可以进行for循环                for message in message[0:3]:<br>​                            print(message.title())</p>
+<h2 id="复制列表"><a href="#复制列表" class="headerlink" title="复制列表"></a>复制列表</h2><p>使用 me=messages[:]省略切片起始索引和终止索引达到复制的目的，（me=messages仅仅是将messages赋给me，是将me关联到了messages中的列表，两个变量指向同一个列表，更改一个，两个都会变）</p>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>元组看起来很像列表，但使用的是圆括号而不是方括号，列表是方括号。<br>    dimensions =(200,50)<br>    for dimension in dimensions:<br>        print(dimension)<br>元组里的元素不可被修改赋值，但元组的变量可以赋值（dimensions可以重新赋值）dimensions=(400,100)</p>
+<p>建议每级缩进都使用四个空格，这既可提高可读性，又留下了足够的多级缩进空间。
+ </p>
+<h1 id="5、if语句"><a href="#5、if语句" class="headerlink" title="5、if语句"></a>5、if语句</h1><h2 id="if最后面必须加冒号"><a href="#if最后面必须加冒号" class="headerlink" title="if最后面必须加冒号"></a>if最后面必须加冒号</h2><p>​        names = [‘tom’,’alice’,’cidy’,’david’,’bob’]<br>​        if car == ‘cidy’:注意不要加括号成了if(car==’cidy’),同时最后要加冒号<br>​        for name in names:<br>​            if name == ‘cidy’:<br>​                print(name.upper())<br>​            else:<br>​                print(name.title())<br>​    在检测是否相等时，区分大小写。若大小写不是那么重要，可通过name.lower()来处理（判断相等为==，不相等为!=）<br>​    if最后面必须加冒号<br>​    判断值是否在列表里<br>​        ‘jack’in names返回false；’jack’not in names返回true<br>if-elif-else</p>
+<pre><code>age = 12
+
+if age&lt;4:
+    price = 0
+elif age&lt;18:
+    price = 5
+else
+    price = 10
+print(“price is” + str(price)+”.”)</code></pre>
+<h2 id="判断列表里是否有值（不为空）"><a href="#判断列表里是否有值（不为空）" class="headerlink" title="判断列表里是否有值（不为空）"></a>判断列表里是否有值（不为空）</h2><p>​    if names:<br>​        print(“不为空”)<br>​    else:<br>​        print(“为空”)<br>在if 语句中将列表名用在条件表达式中时，Python将在列表至少包含一个元素时返回True ，并在列表为空时返回False</p>
+<p>&lt;、=&lt;、&gt;、&gt;=等符号建议最好左右添加一个空格<br>如<br>        if age &lt; 4:比 if age&lt;4好，不影响对代码的解读，让代码阅读起来更容易。
+ </p>
+<pre><code>从字典开始是重要部分及复杂部分了，前面都是基础，前面的很快就可以学完 </code></pre>
+<h1 id="6、字典"><a href="#6、字典" class="headerlink" title="6、字典"></a>6、字典</h1><p>##例子：<br>    主要括号为花括号{}<br>alien = {‘color’ : ‘green’, ‘name’ : ‘Tom’, ‘sex’ : ‘man’}<br>如color为键key，green为值value。键与值一一对应。（键—值对）<br>    print(alien[‘color’])<br>添加键值对<br>    alien[‘x_position’] = 0<br>    alien[‘y_position’] = 2<br>    print(alien)<br>结果为<br>{‘color’ : ‘green’, ‘name’ : ‘Tom’, ‘sex’ : ‘man’, ‘x_positin’ : 0, ‘y_position’ : 2}</p>
+<p>创建一个空字典：alien = {}<br>修改字典的值，直接 alien[‘color’] = ‘yellow’<br>删除键–值对 del alien[‘name’]删除之后，就永远消失了<br>字典可以定义为下面的格式<br>alien = {<br>        ‘color’ : ‘green’,<br>        ‘name’ : ‘Tom’,<br>        ‘sex’ : ‘man’<br>        }<br>遍历字典<br>    遍历所有的键–值对<br>        for key, value in alien.items():<br>            print(“\nKey:”+key)<br>            print(“\nValue:”+value)<br>    items()返回一个键–值对列表，for循环依次将每个键值对存入指定两个变量中。（也可写为for k, v in alien.items():）<br>    遍历字典时，键值对的返回顺序与存储顺序不同，Python不关心键值对的存储顺序，只在乎键与值之间的对应关系。<br>    遍历字典中的所有键<br>        for al in alien.keys():<br>            print(“\nKey:”+al)<br>    按顺序遍历字典中的所有键<br>        for al in sorted(alien.keys()):<br>            print(“\nKEY:”+al)<br>    遍历字典中的所有值<br>        for la in alien.values():<br>            print(“\nValue:”+la).<br>字典嵌套<br>    嵌套：将一系列字典存储在列表中，或将列表作为值存储在字典中，称为嵌套。（可以在列表中嵌套字典、在字典中嵌套列表甚至在字典中嵌套字典）</p>
+<p>列表中存储字典<br>alien_0 = {‘color’: ‘green’,’point’: 5}<br>alien_1 = {‘color’: ‘yellow’,’point’: 10}<br>alien_2 = {‘color’: ‘red’,’point’:15}<br>    aliens = [alien_0,alien_1,alien_3]<br>for alien in aliens:<br>    print(alien)<br>字典中存储列表</p>
+<p>字典中存储字典</p>
+<h1 id="7、用户输入和while循环"><a href="#7、用户输入和while循环" class="headerlink" title="7、用户输入和while循环"></a>7、用户输入和while循环</h1><p>​    函数input()。让程序停止运行，等待用户输入一些文本。获取用户的输入，将其存入变量中。<br>​    me = input(“Tell me ,what’s your name?”)<br>​    print(me)<br>使用int()来获取数值输入，当使用input()，Python会将输入解读成字符串<br>​    age = input(“How old are you”)<br>​    print(age)<br>​    print(int(age))<br>求模运算符%，两数相除返回余数<br>while循环<br>​    i = 1<br>​    while i &lt;= 5:<br>​        print(i)<br>​        i += 1<br>用户选择何时退出<br>​    prompt = “NAME:”<br>​    prompt += “Enter ‘quit’ to end.”<br>​    message = “”<br>​    while message != ‘quit’:<br>​        message = input(prompt)<br>​        if message != ‘quit’<br>​            print(message)<br>使用标志（相当于立一个flag）;            使用break 退出循环<br>在循环中使用continue，直接进入下一循环<br>使用while 循环来处理列表和字典<br>​        在列表之间移动元素<br>​            while names:<br>​                name = names.pop()<br>​                name_1.append(name)<br>​        删除包含特定值的所有列表元素<br>​            while ‘tom’ in names:<br>​                names.remove(‘tom’)<br>​        使用用户输入来填充字典<br>​            responses = {}<br>​            polling_active = True<br>​            while polling_active:<br>​                name = input(“\nWhat is your name? “)<br>​                response = input(“Which mountain “)<br>​                responses[name] = response<br>​                repeat = input(“ (yes/ no) “)<br>​                if repeat == ‘no’:<br>​                    polling_active = False</p>
+<h1 id="8、函数"><a href="#8、函数" class="headerlink" title="8、函数"></a>8、函数</h1><p>​    函数定义<br>​        def greet_user(user,sex):<br>​            print(user.upper())<br>​        greet_user(‘alice’,’man’)<br>​    形参与实参<br>​    函数调用中实参的顺序与函数定义中形参的顺要一致<br>关键字实参 是传递给函数的名称—值对。你直接在实参中将名称和值关联起来<br>​    greet_user(user=’alice’,sex=’man’)<br>编写函数时，可以给形参指定默认值，当函数调用提供实参时，使用实参；当未提供时，使用默认值。def greet_user(user,sec=’woman’)<br>​        鉴于可混合使用位置实参、关键字实参和默认值，通常有多种等效的函数调用方式</p>
+<pre><code>返回值地函数并非总是直接显示输出，处理一些数据，并返回一个或一组值
+def greet_user(user,sex):
+    message = user + ‘ ’+sex
+    return message.title()
+messages = greet_user(‘tom’,’man’)
+print(messages)
+    通过使用默认值以及if语句来让实参变成可选的：
+    def get_formatted_name(first_name, last_name, middle_name=&#39;&#39;):
+        if middle_name:
+            full_name = first_name + &#39; &#39; + middle_name + &#39; &#39; + last_name 
+        else:
+            full_name = first_name + &#39; &#39; + last_name
+        return full_name.title()
+    musician = get_formatted_name(&#39;jimi&#39;, &#39;hendrix&#39;)
+    print(musician)
+    musician = get_formatted_name(&#39;john&#39;, &#39;hooker&#39;, &#39;lee&#39;)
+    print(musician)</code></pre>
+<p>返回字典<br>    函数可返回任何类型的值，包括列表和字典等较复杂的数据结构。<br>传递列表<br>禁止函数修改列表<br>    传递给函数的是列表的副本而不是原件，这样函数所做的任何修改都只影响副本<br>    function_name(list_name[:]<br>传递任意数量的实参        在参数前面加上*<br>    def make_pizza(*toppings)://to    ppings为列表名<br>结合使用位置实参和任意数量实参<br>    函数若要接受不同类型的实参，必须在函数定义中将接纳任意数量实参的形参放在最后。Python先匹配位置实参和关键字实参，再将余下的实参都收集到最后一个形参中。<br>    def make_pizza(size, *toppings):</p>
+<p>使用任意数量的关键字实参         def build_profile(first, last, **user_info):<br>    “””创建一个字典，其中包含我们知道的有关用户的一切”””<br>            profile = {}<br>            profile[‘first_name’] = first<br>            profile[‘last_name’] = last<br>            for key, value in user_info.items():<br>                profile[key] = value<br>            return profile<br>        user_profile = build_profile(‘albert’, ‘einstein’, location=’princeton’, field=’physics’)<br>        print(user_profile)<br>最后输出为一个字典{‘first_name’: ‘albert’, ‘last_name’: ‘einstein’,<br>‘location’: ‘princeton’, ‘field’: ‘physics’}         将函数存储在模块中<br>    函数的优点之一是，使用它们可将代码块与主程序分离。通过给函数指定描述性名称，可让主程序容易理解得多。你还可以更进一步，将函数存储在被称为模块 的独立文件中，再将模块导入 到主程序中。import 语句允许在当前运行的程序文件中使用模块中的代码。<br>        模块是扩展名为.py的文件<br>导入整个模块<br>    在making_pizzas.py中导入整个模块pizza.py<br>        开头加上import pizza<br>导入特定的函数<br>    from module_name import function_name     如from pizza import make_pizza<br>使用as 给函数指定别名<br>    from pizza import make_pizza as mp<br>使用as 给模块指定别名<br>    import pizza as p</p>
+<p>导入模块中的所有函数<br>        使用星号（* ）运算符可让Python导入模块中的所有函数：<br>    from pizza import *</p>
+<p>函数编写规则<br>    给形参指定默认值时，等号两边不要有空格：<br>对于函数调用中的关键字实参，也应遵循这种约定：
+ </p>
+<h1 id="9、类"><a href="#9、类" class="headerlink" title="9、类"></a>9、类</h1><p>面向对象编程<br>类中方法的形参第一个为self，在调用时不需要給值<br>            创建类和使用类<br>class Dog():<br>     def <strong>init</strong>(self, name,age)://init前后两个下划线<br>             self.name = name<br>             self.age = age<br>     def sit(self):<br>             print(self.name.title() + “is now sitting “)<br>     def roll(self):<br>             print(self.name.title() + “ roller over”)<br>x = Dog(‘tom’,5)<br>print(x.name.upper())<br>print(x.<strong>dict</strong>)//查看属性，dict前后也是两个下划线<br>python的构造函数很特殊，必须是<strong>init</strong> ，前后各有两个下划线<br>            使用类和实例<br>给属性指定默认值<br>    通过在构造函数里直接定义<br>修改属性的值<br>    直接通过实例进行修改；通过方法进行设置；通过方法进行递增（增加特定的值）<br>            继承<br>    一个类继承 另一个类时，它将自动获得另一个类的所有属性和方法；原有的<br>类称为父类 ，而新类称为子类 。子类继承了其父类的所有属性和方法，同时还可以定义自己的属性和方法。<br>        创建子类的实例时，Python首先要给父类的所有属性赋值，子类 方法<strong>init</strong>()需要父类的协助<br>class car():<br>    def <strong>init</strong>(self,make,model,year):<br>        self.make = make<br>        self.model = model<br>        self.year = year<br>        self.odometer = 0<br>    def get_name(self):<br>        long_name = str(self.year)+’ ‘+self.make+’ ‘+self.model<br>        return long_name.upper()<br>class elec_car(car):<br>    def <strong>init</strong>(self,make,model,year):<br>        super().<strong>init</strong>(make,model,year)<br>x = elec_car(‘japan’,’dazhong’,2018)<br>print(x.get_name())<br>            给子类定义属性和方法<br>    class elec_car(car):<br>        def <strong>init</strong>(self,make,model,year):<br>            super().<strong>init</strong>(make,model,year)<br>            self.battery_size = 70//battery_size为elec_car专有的属<br>            重写父类的方法<br>        def get_name(self):<br>            print(‘重写父类中的get_name方法’)</p>
+<pre><code>            将实例用作属性
+class car():
+    --snip—
+class Battery():
+    def __init__(self , battery_size=70):
+        self.battery_size = battery_size
+    def _battery1(self):
+        print(“this car has a “+str(self.battery_size))
+class elec_car(car):
+    def __init__(self,make,model,year):
+        super().__init__(make,model,year)
+        self.battery_ = Battery()//battery 为elec_car类的属性
+m = elec_car(‘df’,’japan’,2016)
+m.battery._battery1//在实例m中查找属性battery，对存储属性battery中的Battery实例调用方法_battery1()</code></pre>
+<p>导入类<br>    导入单个类<br>在首行加入from car import Car（car为car.py；Car为car.py里的Car类）<br>    在一个模块中存储多个类（模块的含义：例如car.py为一个模块）        </p>
+<pre><code>从一个模块中导入多个类
+    for car import Car,ElectricCar
+导入整个模块        
+    import car
+导入模块中的所有类
+    from module_name import *
+在一个模块中导入另一个模块
+    from car import Car
+    from electric_car import ElectricCar</code></pre>
+<h1 id="10、文件和异常"><a href="#10、文件和异常" class="headerlink" title="10、文件和异常"></a>10、文件和异常</h1><p>从文件中读取数据<br>        读取整个文件<br>            with open(“name.txt”) as file_object:<br>                contents = file_object.read()<br>                print(contents)<br>    因为read() 到达文件末尾时返回一个空字符串，所以会多出一个空行，使用print(contents.rstrip())来删除多出来的空行<br>        文件路径,在文件前加上路径（相对路径和绝对路径）<br>        相对路径：相对当前程序的位置<br>        绝对路径：文件在计算机的准确位置，绝对路径一般存储在一个变量中<br>在Linux和OS X中使用/左斜杠，如 with open(‘text_files/filename.txt’)<br>在window中使用\右斜杠<br>            with open(‘text_files\filename.txt’) as file_object:<br>windows系统中的绝对路径使用<br>file_path=’C:\Users\ehmatthes\other_files\text_files\filename.txt’<br>with open(file_path) as file_object:<br>        逐行读取<br>            读取文件时，检查每一行<br>                filename = ‘name.txt’<br>                with open(filename) as file_ob:<br>                    for line in file_ob:<br>                        print(line)<br>        （输出的每行的末尾都有一个看不见的换行符，而print 语句也会加上一个换行符，因此每行末尾都有两个换行符：一个来自文件，另一 个来自print 语句。要消除这些多余的空白行，可在print 语句中使用rstrip()）<br>        创建一个包含文件各行内容的列表<br>            将文件的各行存储在一个列表中，在with代码块之外输出<br>                filename = ‘name.txt’<br>                with open(filename) as file:<br>                    lines = file.readlines()<br>                for line in lines:<br>                    print(line.rstrip())    </p>
+<pre><code>    使用文件的内容
+            将文件里的数据（例圆周率）存到变量str中
+            str = ‘’
+            for line in lines:
+                str += line.rstrip()
+    包含一百万位的大型文件
+            数据过大，可选择只输出小数点后50位
+            print(str[:52] + “……”)</code></pre>
+<p>写入文件<br>        将文本写入空文件中<br>        filename = ‘name.txt’<br>        with open(filename , ‘w’) as file_object:<br>            file_object.write(“i will create a world”)<br>    调用open() 时提供了两个实参，第一个实参是要打开的文件的名称；第二个实参（’w’ ）告诉Python，我们要以写入模式打开这个文件。打开文件 时，可指定读取模式 （’r’ ）、写入模式 （’w’ ）、附加模式 （’a’ ）或让你能够读取和写入文件的模式（’r+’ ）。如果你省略了模式实参，Python将以默认的只读模式打开文件。如果你要写入的文件不存在，函数open()将自动创建它。然而，以写入（’w’ ）模式打开文件时千万要小心，因为如果指定的文件已经存在，Python将在返回文件对象前清空该文件。<br>        写入多行<br>        with open(filename,’w’) as file:<br>            file.write(“first.\n”)<br>            file.write(“second.\n”)<br>        函数write() 不会在你写入的文本末尾添加换行符，写入多行时需要加上换行符\n<br>        附加到文件<br>        以附加模式打开文件,不会在返回文件对象前清空文件，写入信息都将添加到文件末尾，文件不存在，会自动创建一个空文件<br>            with opern(filename,’a’)as file:<br>异常<br>        使用try-except代码块，使用异常避免程序崩溃<br>            try:<br>                print(5/0)<br>            except ZeroDivisionError:<br>                print(“ERROR”)</p>
+<pre><code>    else 代码块
+        依赖于try 代码块成功执行的代码都应放到else 代码块中：             try:
+            x = a/b
+        except ZeroDivisionError:
+            print(“ERROR”)
+        else:
+            print(x)
+    处理FileNotFoundError 异常
+        使用文件时，找不到文件报错，使用try-except代码块处理
+        filename = ‘nameA.txt’
+        try:
+            with open(filename) as f_obj:
+                contents = f_obj.read()
+        except FileNotFoundError:
+            print(“the file “ +filename+ “ does not exist.”)    
+    分析文本
+        例如计算一篇文章包含了多少单词，使用方法split(),此方法将根据一个字符串创造一个单词列表
+        m = “Alice in Wonderland”
+        m.split()
+        split()以空格为分隔符将字符串拆分
+    使用多个文件</code></pre>
+<p>将计算单词数量代码放到函数中，同时分析多个文件<br>def count_words(filename):<br>    try:<br>        with open(filename) as f_obj:<br>            contents = f_obj.read()<br>    except FileNotFoundError:<br>        msg = “Sorry, the file “ + filename + “ does not exist.”<br>        print(msg)<br>    else:<br>        words = contents.split()<br>        num_words = len(words)<br>        print(“The file “ + filename + “ has about “ + str(num_words) +” words.”)<br>    filenames = [‘alice.txt’, ‘siddhartha.txt’, ‘moby_dick.txt’, ‘little_women.txt’] //分析多个文件<br>    for filename in filenames:<br>        count_words(filename)<br>        失败时一声不吭<br>        并非每次发生异常都要显示出来告诉用户，有时希望发生异常时一声不吭，像什么都没有发生一样继续运行<br>        try:<br>            –snip<br>        except FileNotFoundError:<br>            pass<br>        else:<br>            –snip<br>    决定报告哪些错误<br>        在什么情况下该向用户报告错误？在什么情况下又应该在失败时一声不吭呢？如果用户知道要分析哪些文件，他们可能希望在有文件没有分析时出现一条消息，将其中的原因告 诉他们。如果用户只想看到结果，而并不知道要分析哪些文件，可能就无需在有些文件不存在时告知他们。向用户显示他不想看到的信息可能会降低程序的可用性。Python的错误 处理结构让你能够细致地控制与用户分享错误信息的程度，要分享多少信息由你决定。<br>存储数据<br>    一种简单的方式是使用模块json来存储数据<br>    通过模块json 能够将简单的Python数据结构转储到文件中，当程序再次运行时加载该文件中的数据。使用json 还可以在Python程序之间分享数据。更重要的是，JSON数据格式并非Python专用的，以JSON格式存储的数据能够与使用其他编程语言的人分享。<br>    使用json.dump()和json.load()<br>        json.dump()来存储<br>        json.load()来读取</p>
+<p> </p>
+<p>附录1<br>代码存在中文，报编码问题时，可以将py文件的编码设为utf-8。<br>或再开头加上 #-<em>- coding:utf-8 -</em>-（PS.  python3似乎没有用）</p>
+<p>python中注释也需要遵循缩进规则<br> <br>附录2</p>
+<p>安装Pygame<br>    先安装pip<br>        访问<a target="_blank" rel="noopener" href="https://bootstrap.pypa.io/get-pip.py%EF%BC%8C%E5%B0%86%E9%A1%B5%E9%9D%A2%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6%EF%BC%8C">https://bootstrap.pypa.io/get-pip.py，将页面代码复制，</a><br>并将其保存为get-pip.py文件，<br>    命令：python get-pip.py 进行安装<br>    在Windows中检查是否安装了pip<br>        python -m pip –version<br>    再安装Pygame<br>    访问<a target="_blank" rel="noopener" href="https://bitbucket.org/pygame/pygame/downloads/%E6%88%96http://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6">https://bitbucket.org/pygame/pygame/downloads/或http://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame下载文件</a><br>    命令：python -m pip install –user pygame-1.9.4-cp36-cp36m-win_amd64.whl<br>当报错：is not a supported wheel on this platform<br>        首先确定python与pygame的版本是否对应，py3.6只能对应cp36<br>其次.whl命名问题也会导致<br>通过以下代码查看支持的命名名称<br>版本为AMD64<br>        import pip._internal<br>        print(pip._internal.pep425tags.get_supported())<br>版本为WIN32<br>        import pip<br>        print(pip.pep425tags.get_supported())</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/01/PMS%E9%83%A8%E7%BD%B2/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/01/Python%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">1、配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">2、对字符串的操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E5%88%97%E8%A1%A8-%E7%94%B1%E4%B8%80%E7%B3%BB%E5%88%97%E6%8C%89%E7%89%B9%E5%AE%9A%E9%A1%BA%E5%BA%8F%E6%8E%92%E5%88%97%E7%9A%84%E5%85%83%E7%B4%A0%E7%BB%84%E6%88%90%E3%80%82"><span class="nav-number">3.</span> <span class="nav-text">3、列表 由一系列按特定顺序排列的元素组成。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81%E5%88%97%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">4、列表的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E8%A7%A3%E6%9E%90"><span class="nav-number">4.1.</span> <span class="nav-text">列表解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E5%88%97%E8%A1%A8"><span class="nav-number">4.2.</span> <span class="nav-text">复制列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%BB%84"><span class="nav-number">4.3.</span> <span class="nav-text">元组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81if%E8%AF%AD%E5%8F%A5"><span class="nav-number">5.</span> <span class="nav-text">5、if语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if%E6%9C%80%E5%90%8E%E9%9D%A2%E5%BF%85%E9%A1%BB%E5%8A%A0%E5%86%92%E5%8F%B7"><span class="nav-number">5.1.</span> <span class="nav-text">if最后面必须加冒号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E5%88%97%E8%A1%A8%E9%87%8C%E6%98%AF%E5%90%A6%E6%9C%89%E5%80%BC%EF%BC%88%E4%B8%8D%E4%B8%BA%E7%A9%BA%EF%BC%89"><span class="nav-number">5.2.</span> <span class="nav-text">判断列表里是否有值（不为空）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6%E3%80%81%E5%AD%97%E5%85%B8"><span class="nav-number">6.</span> <span class="nav-text">6、字典</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7%E3%80%81%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5%E5%92%8Cwhile%E5%BE%AA%E7%8E%AF"><span class="nav-number">7.</span> <span class="nav-text">7、用户输入和while循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8%E3%80%81%E5%87%BD%E6%95%B0"><span class="nav-number">8.</span> <span class="nav-text">8、函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9%E3%80%81%E7%B1%BB"><span class="nav-number">9.</span> <span class="nav-text">9、类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10%E3%80%81%E6%96%87%E4%BB%B6%E5%92%8C%E5%BC%82%E5%B8%B8"><span class="nav-number">10.</span> <span class="nav-text">10、文件和异常</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description">思考+笔记</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

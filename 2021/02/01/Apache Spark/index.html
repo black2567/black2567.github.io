@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Apache Spark入门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apache Spark">
+<meta property="og:url" content="http://example.com/2021/02/01/Apache%20Spark/index.html">
+<meta property="og:site_name" content="长夜未央">
+<meta property="og:description" content="Apache Spark入门">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268790-08bf80b2-f863-46f6-ace3-fd8407e82fb2.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259264630-16f6ce34-e84f-4e74-b896-097a19755de2.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259264983-bfcc228e-516f-4647-aee7-c2b99edd4d59.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259266734-b7a240d6-bdb6-4c8c-ae7e-4c4a29a0d442.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259266742-9f74c244-c068-44b9-9c30-f0167a0d57de.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268809-bb34e392-e7cd-4016-8f43-5309d3a9f843.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268887-eeefab97-3e42-49bb-b109-00c70eff285c.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268832-ce6d69ef-d8c4-466a-ba19-d4a352a44030.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268849-2fa8dbba-edf0-4959-89f9-a7bf91eb651f.jpeg">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268861-213a715c-3ebd-4b8c-8026-0a00ceb2834e.jpeg">
+<meta property="article:published_time" content="2021-02-01T13:45:42.789Z">
+<meta property="article:modified_time" content="2021-01-31T13:34:18.841Z">
+<meta property="article:tag" content="Spark">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268790-08bf80b2-f863-46f6-ace3-fd8407e82fb2.jpeg">
+
+<link rel="canonical" href="http://example.com/2021/02/01/Apache%20Spark/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Apache Spark | 长夜未央</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">长夜未央</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/Apache%20Spark/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Apache Spark
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-31 21:34:18" itemprop="dateModified" datetime="2021-01-31T21:34:18+08:00">2021-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Apache Spark入门</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Apache-Spark-入门"><a href="#Apache-Spark-入门" class="headerlink" title="Apache Spark 入门"></a>Apache Spark 入门</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="什么是Apache-Spark？"><a href="#什么是Apache-Spark？" class="headerlink" title="什么是Apache Spark？"></a>什么是Apache Spark？</h3><p>Apache Spark是一个开源集群运算框架，最初由加州大学柏克莱分校AMPLab开发。</p>
+<h3 id="Apache-Spark的特点是什么？"><a href="#Apache-Spark的特点是什么？" class="headerlink" title="Apache Spark的特点是什么？"></a>Apache Spark的特点是什么？</h3><ul>
+<li>开源</li>
+<li>高性能，基于内存进行数据处理的</li>
+<li>易用，支持R、Scala、Java等</li>
+<li>通用，支持批处理、流处理、机器学习等多种场景</li>
+</ul>
+<h3 id="Apache-Spark的生态是怎样的？"><a href="#Apache-Spark的生态是怎样的？" class="headerlink" title="Apache Spark的生态是怎样的？"></a>Apache Spark的生态是怎样的？</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268790-08bf80b2-f863-46f6-ace3-fd8407e82fb2.jpeg" alt="img"></p>
+<p>上层模块，根据场景来设计：</p>
+<ul>
+<li><p>Spark SQL + DataFrames 处理结构化数据的</p>
+</li>
+<li><p>Streaming 支持流式场景的模块</p>
+</li>
+<li><p>MLlib 机器学习模块</p>
+</li>
+<li><p>GraphX 图计算模块</p>
+</li>
+</ul>
+<p>底层模块，Spark Core API，所有的场景模块都是基于这一核心进行设计的，也是Spark最原始的模块，多语言支持便由它来提供。</p>
+<h3 id="Apache-Spark架构"><a href="#Apache-Spark架构" class="headerlink" title="Apache Spark架构"></a>Apache Spark架构</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259264630-16f6ce34-e84f-4e74-b896-097a19755de2.jpeg" alt="img"></p>
+<p>在Spark中，比较核心的有三块</p>
+<ul>
+<li><p>Driver</p>
+</li>
+<li><ul>
+<li>运行作业主函数</li>
+</ul>
+</li>
+<li><ul>
+<li>创建SparkContext（SparkContext的作用是：帮助程序使用spark提供的一些功能）</li>
+</ul>
+</li>
+<li><p>Cluster Manager（目前为止支持以下四种，主要的作用有两个：分配资源、把Driver要执行的任务分配到对应的Executor）</p>
+</li>
+<li><ul>
+<li>Standalone</li>
+</ul>
+</li>
+<li><ul>
+<li>Mesos</li>
+</ul>
+</li>
+<li><ul>
+<li>K8S</li>
+</ul>
+</li>
+<li><ul>
+<li>Yarn</li>
+</ul>
+</li>
+<li><p>Executor（执行任务的实际进程）</p>
+</li>
+<li><ul>
+<li>执行task</li>
+</ul>
+</li>
+<li><ul>
+<li>处理rdd一个分区的数据</li>
+</ul>
+</li>
+</ul>
+<p>整个执行流程：<br>写好程序 -&gt; 在Driver端跑起来了 -&gt; 通过Cluster Manager申请到了资源 -&gt; 将任务调度到了Executor上</p>
+<h2 id="其他基本概念"><a href="#其他基本概念" class="headerlink" title="其他基本概念"></a>其他基本概念</h2><ul>
+<li><p>Spark Application</p>
+</li>
+<li><ul>
+<li>用户写的Spark应用程序</li>
+</ul>
+</li>
+<li><p>Job</p>
+</li>
+<li><ul>
+<li>一个application回生成多个job</li>
+</ul>
+</li>
+<li><ul>
+<li>Job直接可以有依赖关系</li>
+</ul>
+</li>
+<li><ul>
+<li>可以并行执行</li>
+</ul>
+</li>
+<li><p>Stage</p>
+</li>
+<li><ul>
+<li>一个job会有多个Stage</li>
+</ul>
+</li>
+<li><ul>
+<li>Stage之间可以有依赖关系</li>
+</ul>
+</li>
+<li><ul>
+<li>可以并行执行</li>
+</ul>
+</li>
+<li><p>Task</p>
+</li>
+<li><ul>
+<li>任务执行的最小单元</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259264983-bfcc228e-516f-4647-aee7-c2b99edd4d59.jpeg" alt="img"></p>
+<h3 id="SparkContext-amp-SparkSession"><a href="#SparkContext-amp-SparkSession" class="headerlink" title="SparkContext &amp; SparkSession"></a>SparkContext &amp; SparkSession</h3><ul>
+<li><p>SparkContext是Spark2.0以前应用运行入口</p>
+</li>
+<li><ul>
+<li>一个进程只能有一个</li>
+</ul>
+</li>
+<li><p>SparkSession是Spark2.0之后的应用运行入口</p>
+</li>
+<li><ul>
+<li>支持SparkContext的特性</li>
+</ul>
+</li>
+<li><ul>
+<li>支持操作dataframes</li>
+</ul>
+</li>
+</ul>
+<h3 id="Spark-APIS的历史"><a href="#Spark-APIS的历史" class="headerlink" title="Spark APIS的历史"></a>Spark APIS的历史</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259266734-b7a240d6-bdb6-4c8c-ae7e-4c4a29a0d442.jpeg" alt="img"></p>
+<h3 id="RDD"><a href="#RDD" class="headerlink" title="RDD"></a>RDD</h3><p>RDD是Spark最核心概念，基础数据结构，全称：弹性分布式数据集（Resilient Distributed Datasets）</p>
+<p>其特点是：</p>
+<ul>
+<li><p>基于内存</p>
+</li>
+<li><p>延时计算</p>
+</li>
+<li><p>容错</p>
+</li>
+<li><p>只读</p>
+</li>
+<li><p>只分区（实现分布式计算）</p>
+</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259266742-9f74c244-c068-44b9-9c30-f0167a0d57de.jpeg" alt="img"></p>
+<h4 id="创建RDD的两种方式"><a href="#创建RDD的两种方式" class="headerlink" title="创建RDD的两种方式"></a>创建RDD的两种方式</h4><ol>
+<li><p>在driver中对已有集合进行并行化</p>
+</li>
+<li><p>基于外部数据源生成</p>
+</li>
+</ol>
+<h4 id="RDD操作类型"><a href="#RDD操作类型" class="headerlink" title="RDD操作类型"></a>RDD操作类型</h4><ul>
+<li><p>Transformations 基于已有的RDD生成新的RDD</p>
+</li>
+<li><p>Actions 触发生成job开始运算</p>
+</li>
+</ul>
+<h2 id="Spark-SQL（DataFrames）"><a href="#Spark-SQL（DataFrames）" class="headerlink" title="Spark SQL（DataFrames）"></a>Spark SQL（DataFrames）</h2><h3 id="Spark-SQL"><a href="#Spark-SQL" class="headerlink" title="Spark SQL"></a>Spark SQL</h3><p>Spark SQL是一个用来处理结构化数据的Spark组件。它提供了一个叫做DataFrames的可编程抽象数据模型，并可以视为一个分布式的SQL查询引擎。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268809-bb34e392-e7cd-4016-8f43-5309d3a9f843.jpeg" alt="img"></p>
+<h3 id="DataFrames"><a href="#DataFrames" class="headerlink" title="DataFrames"></a>DataFrames</h3><p>DataFrame是类似于关系表的分布式数据集。其特点是：</p>
+<ul>
+<li><p>分布式</p>
+</li>
+<li><p>只读</p>
+</li>
+<li><p>SQL查询</p>
+</li>
+<li><p>Schema</p>
+</li>
+<li><p>Catalyst优化</p>
+</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268887-eeefab97-3e42-49bb-b109-00c70eff285c.jpeg" alt="img"></p>
+<h3 id="DataSet"><a href="#DataSet" class="headerlink" title="DataSet"></a>DataSet</h3><p>DataSet 是结合DataFrame和RDD优势的分布式数据集</p>
+<ul>
+<li><p>Scale &amp; Java（目前只支持这两种语言）</p>
+</li>
+<li><p>类型安全（RDD）</p>
+</li>
+<li><p>关系型模型（DF）</p>
+</li>
+<li><p>查询优化（DF）</p>
+</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268832-ce6d69ef-d8c4-466a-ba19-d4a352a44030.jpeg" alt="img"></p>
+<h2 id="进阶指南"><a href="#进阶指南" class="headerlink" title="进阶指南"></a>进阶指南</h2><h3 id="Structured-Streaming（SS）"><a href="#Structured-Streaming（SS）" class="headerlink" title="Structured Streaming（SS）"></a>Structured Streaming（SS）</h3><p>SS是构建于Spark SQL的流处理引擎。特性是：</p>
+<ul>
+<li><p>可扩展</p>
+</li>
+<li><p>容错</p>
+</li>
+<li><p>无限增长的表格（把数据流视为无限增长的表格）</p>
+</li>
+<li><p>SQL</p>
+</li>
+<li><p>DataFrame</p>
+</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268849-2fa8dbba-edf0-4959-89f9-a7bf91eb651f.jpeg" alt="img"></p>
+<h3 id="ML-Pipeline"><a href="#ML-Pipeline" class="headerlink" title="ML Pipeline"></a>ML Pipeline</h3><p>ML pipelines 是基于DataFrame抽象的，用于构建机器学习工作流的API</p>
+<ul>
+<li><p>DataFrame：表示数据集</p>
+</li>
+<li><p>Transformer：DataFrame转换的算法</p>
+</li>
+<li><p>Estimatior：作用于DataFrame生成Transformer</p>
+</li>
+<li><p>Pipeline：ML工作流</p>
+</li>
+<li><p>Parameter：指定Transformer和Estimator的参数</p>
+</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/341557/1595259268861-213a715c-3ebd-4b8c-8026-0a00ceb2834e.jpeg" alt="img"></p>
+<h2 id="问题答疑"><a href="#问题答疑" class="headerlink" title="问题答疑"></a>问题答疑</h2><h4 id="读mysql这样的外部数据源的默认分区数怎么判断？"><a href="#读mysql这样的外部数据源的默认分区数怎么判断？" class="headerlink" title="读mysql这样的外部数据源的默认分区数怎么判断？"></a>读mysql这样的外部数据源的默认分区数怎么判断？</h4><p>具体可以参考DataFrameReader.jdbc相关接口， 默认是1个task去读取， 也可以指定 partition 个数或者是分区条件。</p>
+<h4 id="sparksql-读取其它存储的数据吗？"><a href="#sparksql-读取其它存储的数据吗？" class="headerlink" title="sparksql 读取其它存储的数据吗？"></a>sparksql 读取其它存储的数据吗？</h4><p>基于DataSource api可以接入多种数据源， 比如hdfs、kudu、oss等等。 根据场景可以选择， 有些数据源的connector需要自己实现， 社区暂时没有提供。</p>
+<h4 id="Spark的DataFrames-和R语言的区别大吗？pandas里面的dataframe和spark的-dataframe是一个概念吗？"><a href="#Spark的DataFrames-和R语言的区别大吗？pandas里面的dataframe和spark的-dataframe是一个概念吗？" class="headerlink" title="Spark的DataFrames 和R语言的区别大吗？pandas里面的dataframe和spark的 dataframe是一个概念吗？"></a>Spark的DataFrames 和R语言的区别大吗？pandas里面的dataframe和spark的 dataframe是一个概念吗？</h4><p>三者的dataframe本质上都是一样的。 不过spark层面的dataframe语义没有r和pandas支持的 完备， 缺乏矩阵的特性， 主要用了类关系型数据表的特性。 不过spark的实现是分布式的， 在大数据场 景下更有优势。 感兴趣可以查阅一下论文： <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2001.00888">https://arxiv.org/abs/2001.00888</a></p>
+<h4 id="spark与Hadoop的关系是？"><a href="#spark与Hadoop的关系是？" class="headerlink" title="spark与Hadoop的关系是？"></a>spark与Hadoop的关系是？</h4><p>都是大数据生态的。 spark应该比较的是hadoop mapreduce。 hadoop还包含yarn hdfs等。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Spark/" rel="tag"># Spark</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/31/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/" rel="prev" title="Java核心面试">
+      <i class="fa fa-chevron-left"></i> Java核心面试
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/01/Apache%20Spark%E5%AD%A6%E4%B9%A0/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache-Spark-%E5%85%A5%E9%97%A8"><span class="nav-number">1.</span> <span class="nav-text">Apache Spark 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFApache-Spark%EF%BC%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是Apache Spark？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache-Spark%E7%9A%84%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.1.2.</span> <span class="nav-text">Apache Spark的特点是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache-Spark%E7%9A%84%E7%94%9F%E6%80%81%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%EF%BC%9F"><span class="nav-number">1.1.3.</span> <span class="nav-text">Apache Spark的生态是怎样的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache-Spark%E6%9E%B6%E6%9E%84"><span class="nav-number">1.1.4.</span> <span class="nav-text">Apache Spark架构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">其他基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SparkContext-amp-SparkSession"><span class="nav-number">1.2.1.</span> <span class="nav-text">SparkContext &amp; SparkSession</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark-APIS%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="nav-number">1.2.2.</span> <span class="nav-text">Spark APIS的历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RDD"><span class="nav-number">1.2.3.</span> <span class="nav-text">RDD</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BARDD%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">创建RDD的两种方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RDD%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">RDD操作类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-SQL%EF%BC%88DataFrames%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">Spark SQL（DataFrames）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark-SQL"><span class="nav-number">1.3.1.</span> <span class="nav-text">Spark SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataFrames"><span class="nav-number">1.3.2.</span> <span class="nav-text">DataFrames</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataSet"><span class="nav-number">1.3.3.</span> <span class="nav-text">DataSet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E6%8C%87%E5%8D%97"><span class="nav-number">1.4.</span> <span class="nav-text">进阶指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Structured-Streaming%EF%BC%88SS%EF%BC%89"><span class="nav-number">1.4.1.</span> <span class="nav-text">Structured Streaming（SS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ML-Pipeline"><span class="nav-number">1.4.2.</span> <span class="nav-text">ML Pipeline</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%AD%94%E7%96%91"><span class="nav-number">1.5.</span> <span class="nav-text">问题答疑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%BBmysql%E8%BF%99%E6%A0%B7%E7%9A%84%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E6%BA%90%E7%9A%84%E9%BB%98%E8%AE%A4%E5%88%86%E5%8C%BA%E6%95%B0%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%EF%BC%9F"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">读mysql这样的外部数据源的默认分区数怎么判断？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sparksql-%E8%AF%BB%E5%8F%96%E5%85%B6%E5%AE%83%E5%AD%98%E5%82%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%90%97%EF%BC%9F"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">sparksql 读取其它存储的数据吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spark%E7%9A%84DataFrames-%E5%92%8CR%E8%AF%AD%E8%A8%80%E7%9A%84%E5%8C%BA%E5%88%AB%E5%A4%A7%E5%90%97%EF%BC%9Fpandas%E9%87%8C%E9%9D%A2%E7%9A%84dataframe%E5%92%8Cspark%E7%9A%84-dataframe%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A6%82%E5%BF%B5%E5%90%97%EF%BC%9F"><span class="nav-number">1.5.0.3.</span> <span class="nav-text">Spark的DataFrames 和R语言的区别大吗？pandas里面的dataframe和spark的 dataframe是一个概念吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spark%E4%B8%8EHadoop%E7%9A%84%E5%85%B3%E7%B3%BB%E6%98%AF%EF%BC%9F"><span class="nav-number">1.5.0.4.</span> <span class="nav-text">spark与Hadoop的关系是？</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description">思考+笔记</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

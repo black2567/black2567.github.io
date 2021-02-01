@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="思考+笔记">
+<meta property="og:type" content="website">
+<meta property="og:title" content="长夜未央">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="长夜未央">
+<meta property="og:description" content="思考+笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:tag" content="study">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>长夜未央</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">长夜未央</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/PMS%E9%83%A8%E7%BD%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/PMS%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-09 14:01:21" itemprop="dateModified" datetime="2020-01-09T14:01:21+08:00">2020-01-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-git代码结构"><a href="#1-git代码结构" class="headerlink" title="1.git代码结构"></a>1.git代码结构</h1><p><img src="D:\admin\Desktop\笔记\Spring笔记\images\1565589663228.png" alt="1565589663228"></p>
+<p>pms：后台代码；</p>
+<p>pms-wclient：前台代码</p>
+<p>pms-wclient-deploy：部署前台的代码</p>
+<p>pms-web：前后台交互</p>
+<h1 id="2-idea导入maven项目"><a href="#2-idea导入maven项目" class="headerlink" title="2.idea导入maven项目"></a>2.idea导入maven项目</h1><p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20200109133556023.png" alt="image-20200109133556023"></p>
+<h1 id="3-项目打包"><a href="#3-项目打包" class="headerlink" title="3.项目打包"></a>3.项目打包</h1><h2 id="1、前台项目"><a href="#1、前台项目" class="headerlink" title="1、前台项目"></a>1、前台项目</h2><p>将pms-wclient目录下的文件复制到pms-wclient-deploy下的 src/main/weapp下(该目录下的文件不用删除)</p>
+<p>在maven视图中选择profiles-&gt;prod（对应pms-wclient-deploy/config/prod目录下的配置，将此目录下的app.json里的webapi指定为后台的http路径），</p>
+<p>接着在maven视图中将pms-wclient-deploy项目打包成war包–&gt; pms-webage.war</p>
+<h2 id="2、后台项目"><a href="#2、后台项目" class="headerlink" title="2、后台项目"></a>2、后台项目</h2><p>先在maven视图中将pms打包；</p>
+<p>然后修改pms-web的config/dev目录下的配置文件app.properties,</p>
+<p>将pms-web打包成war包–&gt;pms-web.war</p>
+<h1 id="4-war包部署"><a href="#4-war包部署" class="headerlink" title="4.war包部署"></a>4.war包部署</h1><p>先将运行的版本备份一下，以防新版本存在问题。</p>
+<h2 id="1、前台部署"><a href="#1、前台部署" class="headerlink" title="1、前台部署"></a>1、前台部署</h2><p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20200109135652481.png" alt="image-20200109135652481"></p>
+<p>在nwds里的部署视图下，选择对应的服务器，点击导入，选择前端的war包（pms-webpage.war）,导入成功后，点击启动。同时确定部署的war包是否已开启，若未开启，右键选中对应的项目(pms-webage)-&gt;启动</p>
+<p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20200109140014719.png" alt="image-20200109140014719"></p>
+<h2 id="2、后台部署"><a href="#2、后台部署" class="headerlink" title="2、后台部署"></a>2、后台部署</h2><p>直接将pms-web.war放在tomcat之中。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/NWDS%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/NWDS%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-08 22:39:15" itemprop="dateModified" datetime="2020-05-08T22:39:15+08:00">2020-05-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>absen.com<del>apps</del>service~service-assembly.jar在服务器上路径：</p>
+<p>/usr/sap/MEP/J01/j2ee/cluster/apps/absen.com/apps~ear/servlet_jsp/manufacturing-webservice-ext/root/WEB-INF/lib</p>
+<p>本地jar包路径：</p>
+<p>E:\workSpace\nwds_workspace.jdi\0\DCs\absen.com\apps</p>
+<p>尝试直接替换</p>
+<p>问题，服务器上的nwds环境，在同步代码时显示成功，但实际代码却为空。</p>
+<p>猜测是nwds工作空间在C盘，而C盘容量已满，导致文件未更新，且内容被清空</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/mysql%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/mysql%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-09 21:20:06" itemprop="dateModified" datetime="2020-06-09T21:20:06+08:00">2020-06-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1、zip压缩包安装"><a href="#1、zip压缩包安装" class="headerlink" title="1、zip压缩包安装"></a>1、zip压缩包安装</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/winton-nfs/p/11524007.html">https://www.cnblogs.com/winton-nfs/p/11524007.html</a></p>
+<h2 id="1-1-下载安装包"><a href="#1-1-下载安装包" class="headerlink" title="1.1 下载安装包"></a>1.1 下载安装包</h2><p>　　①进入官网后，点击”Dowload”，然后页面往下拉</p>
+<p>　　<strong><img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915192559647-350219166.jpg" alt="img"></strong></p>
+<p>　　</p>
+<p>　　②接下来看到的页面是这样的，红色框框的链接就是mysql社区版，是免费的mysql版本，然后我们点击这个框框的链接：↓</p>
+<p>　　<img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915192752591-1371678378.jpg" alt="img"></p>
+<p>　　　 ③接下来跳转到这个页面，在这里，我们只要下载社区版的Server就可以了：↓</p>
+<p><img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915193055444-1634354218.jpg" alt="img"></p>
+<p>　　④下载免安装版(windows以外的其他系统除外)</p>
+<p><img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915193247068-1867170933.jpg" alt="img"> </p>
+<p>这样，安装包就下载好了！</p>
+<p>注意，安装的目录应当放在指定位置，，其次，绝对路径中避免出现中文，推荐首选英文为命名条件！！！！(我的为参考)</p>
+<p>　　<strong><img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915193949895-2127429091.jpg" alt="img"></strong></p>
+<h2 id="1-2-Mysql的配置"><a href="#1-2-Mysql的配置" class="headerlink" title="1.2 Mysql的配置"></a>1.2 Mysql的配置</h2><p>　　*<strong>以管理员身份打开命令行(如下图所示)</strong></p>
+<p>　　<strong><img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915194138600-1666145922.jpg" alt="img"></strong></p>
+<p>　　</p>
+<p>　　①下转到mysql的bin目录下：</p>
+<p>　<img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915194319422-1269147823.jpg" alt="img"></p>
+<p>　　②安装mysql的服务：mysqld –install(或者.\mysqld install)<img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915194355509-621408710.jpg" alt="img">-</p>
+<p>　　③初始化mysql，在这里，初始化会产生一个随机密码,如下图框框所示，记住这个密码，后面会用到(mysqld –initialize –console)或者(.\mysqld –initialize –console)</p>
+<p>　　<img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915194537624-1288770126.jpg" alt="img"></p>
+<p>　　</p>
+<p>　　④开启mysql的服务(net start mysql)</p>
+<p>　　<img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915194809019-447378790.jpg" alt="img"></p>
+<p>　　⑤登录验证，mysql是否安装成功！(要注意上面产生的随机密码，不包括前面符号前面的空格，否则会登陆失败)，如果和下图所示一样，则说明你的mysql已经安装成功！注意，，一定要先开启服务，不然会登陆失败，出现拒绝访问的提示符！！！</p>
+<p>　　<img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915194855594-1799062186.jpg" alt="img"></p>
+<p>修改密码：</p>
+<p>　　　　由于初始化产生的随机密码太复杂，，不便于我们登录mysql，因此，我们应当修改一个自己能记住的密码！！</p>
+<p> <img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915195232011-1164270181.jpg" alt="img"></p>
+<p>　　再次登录验证新密码：</p>
+<p><img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915195310138-1959548424.jpg" alt="img"></p>
+<p>　　<strong>设置系统的全局变量：</strong></p>
+<p>　　　　为了方便登录操作mysql，在这里我们设置一个全局变量：↓</p>
+<p>　　　　①点击”我的电脑”–&gt;”属性”–&gt;’’高级系统设置’’–&gt;’’环境变量’’,接下来如下图所操作</p>
+<p>　<img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915195658938-215279743.jpg" alt="img"></p>
+<p>　　　　②把新建的mysql变量添加到Path路径变量中，点击确定，即完成：</p>
+<p><img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915195808186-1920486822.jpg" alt="img">  </p>
+<p>　　　　配置完成之后，每当我们想要用命令行使用mysql时，只需要win+R，–&gt;输入”cmd”打开命令行，之后输入登录sql语句即可</p>
+<p>　　　　③在mysql目录下创建一个ini或cnf配置文件，在这里我创建的是ini配置文件，里面写的代码是mysql的一些基本配置<img src="images/mysql%E5%AE%89%E8%A3%85/1727568-20190915201058332-997469892.jpg" alt="img"></p>
+<p>　　就这样，一个免安装版的Mysql就安装并配置完成了，初学者，尽量不要用mysql的编译器，，推荐用命令行练习至熟练~</p>
+<h1 id="2、参考命令"><a href="#2、参考命令" class="headerlink" title="2、参考命令"></a>2、参考命令</h1><p><strong>若mysqld命令报错，可以使用.\mysqld</strong></p>
+<ol>
+<li><p>安装服务：mysqld –install</p>
+</li>
+<li><p>初始化：mysqld –initialize –console</p>
+</li>
+<li><p>开启服务：net start mysql</p>
+</li>
+<li><p>关闭服务：net stop mysql</p>
+</li>
+<li><p>登录mysql：mysql -u root -p</p>
+<p>​    Enter Password: 密码</p>
+</li>
+<li><p>修改密码：alter user ‘root’@’localhost’ identified by ‘修改后的密码’</p>
+</li>
+<li><p>标记删除mysql服务：sc delete mysql</p>
+</li>
+</ol>
+<p>　　</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/mybatis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/mybatis%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-03 23:43:06" itemprop="dateModified" datetime="2019-11-03T23:43:06+08:00">2019-11-03</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.mybatis的映射xml文件</p>
+<p>mapper.xml文件中使用<if></if></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;sel&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.zc.book_dao.Book&quot;</span>&gt;</span></span><br><span class="line">    select *</span><br><span class="line">    from book</span><br><span class="line">    where 1=1</span><br><span class="line">    <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;id == 12&quot;</span>&gt;</span></span><br><span class="line">        and bookId = #&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>只有id=12时才会查询单条为12的记录，反之会检索出所有的记录</p>
+<p>不过必须再dao层(及mappper.java)文件的方法参数加上注释，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据bookId查询书籍</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> bookId</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">List&lt;Book&gt; <span class="title">sel</span><span class="params">(<span class="meta">@Param(&quot;id&quot;)</span> String bookId)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>或者可以直接修改xml文件为如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;sel&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.zc.book_dao.Book&quot;</span>&gt;</span></span><br><span class="line">    select *</span><br><span class="line">    from book</span><br><span class="line">    where 1=1</span><br><span class="line">    <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;_parameter == 12&quot;</span>&gt;</span></span><br><span class="line">        and bookId = #&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-21 10:18:58" itemprop="dateModified" datetime="2020-10-21T10:18:58+08:00">2020-10-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="0-虚拟机安装linux"><a href="#0-虚拟机安装linux" class="headerlink" title="0.虚拟机安装linux"></a>0.虚拟机安装linux</h1><p><a target="_blank" rel="noopener" href="https://how2j.cn/k/vmware/vmware-ip/2020.html">https://how2j.cn/k/vmware/vmware-ip/2020.html</a></p>
+<h1 id="1-Linux中运行springboot的jar文件"><a href="#1-Linux中运行springboot的jar文件" class="headerlink" title="1.Linux中运行springboot的jar文件"></a>1.Linux中运行springboot的jar文件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接在控制台进行启动，缺点就是控制台关闭项目也就关闭了。</span></span><br><span class="line">java -jar bootdo.jar</span><br><span class="line"><span class="comment">// 这种方式可以运行在后台,但是如果推出了shell的话，那也会挂</span></span><br><span class="line">java -jar /bootdo-<span class="number">2.0</span><span class="number">.0</span>.jar &gt; bootdolog.file <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line"><span class="comment">// 加上nohup的话，即使推出shell，也不影响。</span></span><br><span class="line">nohup java -jar /bootdo-<span class="number">2.0</span><span class="number">.0</span>.jar &gt; bootdolog.file <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">启动：</span><br><span class="line">    nohup java -jar absen_report.jar --spring.profiles.active=prd /etc/<span class="keyword">null</span> &amp;</span><br><span class="line">    nohup java -jar absen_report.jar &gt; reportLog.file <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line">关闭：</span><br><span class="line">    ps -ef | grep absen_report.jar | grep -v grep | awk <span class="string">&#x27;&#123; print $2 &#125;&#x27;</span></span><br><span class="line">    得到端口号</span><br><span class="line">    kill 端口号</span><br></pre></td></tr></table></figure>
+<h1 id="2-如何反编译java的class文件"><a href="#2-如何反编译java的class文件" class="headerlink" title="2.如何反编译java的class文件"></a>2.如何反编译java的class文件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javap -c 文件名</span><br></pre></td></tr></table></figure>
+<p><img src="D:\admin\Desktop\笔记\Spring笔记\images\1574144911.png" alt="image-20191119142843831"></p>
+<h1 id="3-查询日志"><a href="#3-查询日志" class="headerlink" title="3.查询日志"></a>3.查询日志</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f name.log</span><br></pre></td></tr></table></figure>
+<h1 id="4-常用的tar解压命令"><a href="#4-常用的tar解压命令" class="headerlink" title="4.常用的tar解压命令"></a>4.常用的tar解压命令</h1><p>常用的tar解压命令总结下，当作备忘：</p>
+<p>tar</p>
+<p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
+<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
+<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<p># tar -cf all.tar *.jpg<br>这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</p>
+<p># tar -rf all.tar *.gif<br>这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。</p>
+<p># tar -uf all.tar logo.gif<br>这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。</p>
+<p># tar -tf all.tar<br>这条命令是列出all.tar包中所有文件，-t是列出文件的意思</p>
+<p># tar -xf all.tar<br>这条命令是解出all.tar包中所有文件，-x是解开的意思</p>
+<p>压缩</p>
+<ul>
+<li>tar –cvf jpg.tar *.jpg 将目录里所有jpg文件打包成tar.jpg</li>
+<li>tar –czf jpg.tar.gz *.jpg  将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz</li>
+<li>tar –cjf jpg.tar.bz2 *.jpg 将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</li>
+<li>tar –cZf jpg.tar.Z *.jpg  将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</li>
+<li>rar a jpg.rar *.jpg rar格式的压缩，需要先下载rar for linux</li>
+<li>zip jpg.zip *.jpg  zip格式的压缩，需要先下载zip for linux </li>
+</ul>
+<p>解压</p>
+<ul>
+<li>tar –xvf file.tar 解压 tar包</li>
+<li>tar -xzvf file.tar.gz 解压tar.gz</li>
+<li>tar -xjvf file.tar.bz2  解压 tar.bz2</li>
+<li>tar –xZvf file.tar.Z  解压tar.Z</li>
+<li>unrar e file.rar 解压rar</li>
+<li>unzip file.zip 解压zip</li>
+</ul>
+<p>总结</p>
+<ol>
+<li>*.tar 用 tar –xvf 解压</li>
+<li>*.gz 用 gzip -d或者gunzip 解压</li>
+<li><em>.tar.gz和</em>.tgz 用 tar –xzf 解压</li>
+<li>*.bz2 用 bzip2 -d或者用bunzip2 解压</li>
+<li>*.tar.bz2用tar –xjf 解压</li>
+<li>*.Z 用 uncompress 解压</li>
+<li>*.tar.Z 用tar –xZf 解压</li>
+<li>*.rar 用 unrar e解压</li>
+<li>*.zip 用 unzip 解压</li>
+</ol>
+<p>linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩。</p>
+<p>1．命令格式：</p>
+<p>tar[必要参数][选择参数][文件] </p>
+<p>2．命令功能：</p>
+<p>用来压缩和解压文件。tar本身不具有压缩功能。他是调用压缩功能实现的 </p>
+<p>3．命令参数：</p>
+<p>必要参数有如下：</p>
+<p>-A 新增压缩文件到已存在的压缩</p>
+<p>-B 设置区块大小</p>
+<p>-c 建立新的压缩文件</p>
+<p>-d 记录文件的差别</p>
+<p>-r 添加文件到已经压缩的文件</p>
+<p>-u 添加改变了和现有的文件到已经存在的压缩文件</p>
+<p>-x 从压缩的文件中提取文件</p>
+<p>-t 显示压缩文件的内容</p>
+<p>-z 支持gzip解压文件</p>
+<p>-j 支持bzip2解压文件</p>
+<p>-Z 支持compress解压文件</p>
+<p>-v 显示操作过程</p>
+<p>-l 文件系统边界设置</p>
+<p>-k 保留原有文件不覆盖</p>
+<p>-m 保留文件不被覆盖</p>
+<p>-W 确认压缩文件的正确性</p>
+<p>可选参数如下：</p>
+<p>-b 设置区块数目</p>
+<p>-C 切换到指定目录</p>
+<p>-f 指定压缩文件</p>
+<p>–help 显示帮助信息</p>
+<p>–version 显示版本信息</p>
+<p>4．常见解压/压缩命令</p>
+<p>tar<br>解包：tar xvf FileName.tar<br>打包：tar cvf FileName.tar DirName<br>（注：tar是打包，不是压缩！）</p>
+<p>.gz<br>解压1：gunzip FileName.gz<br>解压2：gzip -d FileName.gz<br>压缩：gzip FileName</p>
+<p>.tar.gz 和 .tgz<br>解压：tar zxvf FileName.tar.gz<br>压缩：tar zcvf FileName.tar.gz DirName</p>
+<p>.bz2<br>解压1：bzip2 -d FileName.bz2<br>解压2：bunzip2 FileName.bz2<br>压缩： bzip2 -z FileName</p>
+<p>.tar.bz2<br>解压：tar jxvf FileName.tar.bz2<br>压缩：tar jcvf FileName.tar.bz2 DirName</p>
+<p>.bz<br>解压1：bzip2 -d FileName.bz<br>解压2：bunzip2 FileName.bz<br>压缩：未知</p>
+<p>.tar.bz<br>解压：tar jxvf FileName.tar.bz<br>压缩：未知</p>
+<p>.Z<br>解压：uncompress FileName.Z<br>压缩：compress FileName</p>
+<p>.tar.Z<br>解压：tar Zxvf FileName.tar.Z<br>压缩：tar Zcvf FileName.tar.Z DirName</p>
+<p>.zip<br>解压：unzip FileName.zip<br>压缩：zip FileName.zip DirName</p>
+<p>.rar<br>解压：rar x FileName.rar<br>压缩：rar a FileName.rar DirName </p>
+<p>5．使用实例</p>
+<p>实例1：将文件全部打包成tar包</p>
+<p>命令：</p>
+<p>tar -cvf log.tar log2012.log</p>
+<p>tar -zcvf log.tar.gz log2012.log</p>
+<p>tar -jcvf log.tar.bz2 log2012.log</p>
+<h1 id="5-centos7重启网络"><a href="#5-centos7重启网络" class="headerlink" title="5.centos7重启网络"></a>5.centos7重启网络</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br><span class="line"></span><br><span class="line">systemctl restart network.service</span><br></pre></td></tr></table></figure>
+<h1 id="6-解压和压缩zip文件"><a href="#6-解压和压缩zip文件" class="headerlink" title="6.解压和压缩zip文件"></a>6.解压和压缩zip文件</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">file.zip为要解压的文件，my_file为解压后存放的路径</span></span><br><span class="line">unzip file.zip -d my_file</span><br></pre></td></tr></table></figure>
+<p>压缩文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -q -r test.zip 全限定路径</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="7-更改文件权限"><a href="#7-更改文件权限" class="headerlink" title="7.更改文件权限"></a>7.更改文件权限</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 file</span><br></pre></td></tr></table></figure>
+<h1 id="8-CentOS网络服务起不来-Job-for-network-service-failed"><a href="#8-CentOS网络服务起不来-Job-for-network-service-failed" class="headerlink" title="8.CentOS网络服务起不来 Job for network.service failed"></a>8.CentOS网络服务起不来 Job for network.service failed</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@centOS ~]<span class="comment"># systemctl start network.service</span></span><br><span class="line">Restarting network (via systemctl): Job <span class="keyword">for</span> network.service failed because the control process exited with error code.</span><br><span class="line">See “systemctl status network.service” and “journalctl -xe” <span class="keyword">for</span> details.</span><br><span class="line">[root@centOS ~]<span class="comment"># systemctl status network.service</span></span><br></pre></td></tr></table></figure>
+<p><img src="images/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/1.jpg" alt="1"></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@centOS ~]<span class="comment"># journalctl -xe</span></span><br></pre></td></tr></table></figure>
+<p><img src="images/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/2.jpg" alt="2"></p>
+<p>原因：</p>
+<p>在CentOS系统上，目前有NetworkManager和network两种网络管理工具。如果两种都配置会引起冲突，而且NetworkManager在网络断开的时候，会清理路由，如果一些自定义的路由，没有加入到NetworkManager的配置文件中，路由就被清理掉，网络连接后需要自定义添加上去。</p>
+<p>解决方法：</p>
+<p>1.将networkmanager服务停了</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop NetworkManager</span><br><span class="line">systemctl <span class="built_in">disable</span> NetworkManager</span><br></pre></td></tr></table></figure>
+<p>2.重启网卡，就ok了</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network</span><br><span class="line">systemctl status network</span><br></pre></td></tr></table></figure>
+<p><img src="images/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/3.png" alt="3"></p>
+<p>#查看所有已安装服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl list-units --<span class="built_in">type</span>=service</span><br></pre></td></tr></table></figure>
+<p><img src="images/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/4.jpg" alt="4"></p>
+<h1 id="9-Linux搭建sftp"><a href="#9-Linux搭建sftp" class="headerlink" title="9.Linux搭建sftp"></a>9.Linux搭建sftp</h1><ol>
+<li>创建用户组、用户、设置密码</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupadd sftp</span><br><span class="line">useradd -g sftp -s /sbin/nologin -M sftp1</span><br><span class="line">passwd sftp1</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建sftp根目录（root用户下创建）</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/sftp/uploads</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>编辑sftp配置文件</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>末尾添加（注意，添加部分一定要放在末尾，否则重启sshd报错</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Subsystem sftp internal-sftp <span class="comment">##指定使用sftp服务使用系统自带的internal-sftp</span></span><br><span class="line">Match Group sftp <span class="comment">##匹配sftp组的用户，如果要匹配多个组，多个组之间用逗号分割</span></span><br><span class="line">ChrootDirectory /home/sftp/uploads/ <span class="comment">##sftp主目录指定到/home/sftp/uploads/</span></span><br><span class="line">ForceCommand internal-sftp <span class="comment">##指定sftp命令</span></span><br><span class="line">AllowTcpForwarding no <span class="comment">##用户不能使用端口转发</span></span><br><span class="line">X11Forwarding no <span class="comment">##用户不能使用端口转发</span></span><br></pre></td></tr></table></figure>
+<p>同时还需注释掉上面的Subsystem</p>
+<p><img src="images/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/image-20200723144851338.png" alt="image-20200723144851338"></p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过sshd -t测试配置文件是否正确，无任何输入则正确</span><br></pre></td></tr></table></figure>
+<p><img src="images/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/image-20200723145010232.png" alt="image-20200723145010232"></p>
+<ol start="4">
+<li>设置主目录权限</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown root:sftp /home/sftp/uploads/   //文件夹所有者必须为root，用户组可以不是root</span><br><span class="line">chmod 744 /home/sftp //权限不能超过755，否则会导致登录报错，可以是755</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>重启sshd</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>登录sftp（linux/Windows）</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sftp sftp1@ip地址</span><br></pre></td></tr></table></figure>
+<p>此时，登录进来的用户只有查看主目录及其子目录的权限，不能删除、上传、下载和重命名文件。</p>
+<ol start="7">
+<li>为sftp1创建文件夹</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/sftp/uploads/test1</span><br><span class="line">chown sftp1:sftp /home/sftp/uploads/test1</span><br><span class="line">chmod 744 /home/sftp/uploads/test1</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>重启sshd</li>
+<li>登录进入sshd执行ls命令查看当前目录下的文件，可以看到一个test1文件夹，cd进入test1文件夹才可以上传本地文件到test1文件夹下或者从test1文件夹下载文件到本地。（忽略test2文件夹，是我为sftp2用户建立的）</li>
+</ol>
+<p><img src="images/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/image-20200723145241717.png" alt="image-20200723145241717"></p>
+<p>将~目录下的文件a删除到test1文件中：</p>
+<p><img src="images/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/image-20200723145349180.png" alt="image-20200723145349180"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-19 11:09:09" itemprop="dateModified" datetime="2020-07-19T11:09:09+08:00">2020-07-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-Linux中运行springboot的jar文件"><a href="#1-Linux中运行springboot的jar文件" class="headerlink" title="1.Linux中运行springboot的jar文件"></a>1.Linux中运行springboot的jar文件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接在控制台进行启动，缺点就是控制台关闭项目也就关闭了。</span></span><br><span class="line">java -jar bootdo.jar</span><br><span class="line"><span class="comment">// 这种方式可以运行在后台,但是如果推出了shell的话，那也会挂</span></span><br><span class="line">java -jar /bootdo-<span class="number">2.0</span><span class="number">.0</span>.jar &gt; bootdolog.file <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line"><span class="comment">// 加上nohup的话，即使推出shell，也不影响。</span></span><br><span class="line">nohup java -jar /bootdo-<span class="number">2.0</span><span class="number">.0</span>.jar &gt; bootdolog.file <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">启动：</span><br><span class="line">    nohup java -jar absen_report.jar --spring.profiles.active=prd /etc/<span class="keyword">null</span> &amp;</span><br><span class="line">    nohup java -jar absen_report.jar &gt; reportLog.file <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line">关闭：</span><br><span class="line">    ps -ef | grep absen_report.jar | grep -v grep | awk <span class="string">&#x27;&#123; print $2 &#125;&#x27;</span></span><br><span class="line">    得到端口号</span><br><span class="line">    kill 端口号</span><br></pre></td></tr></table></figure>
+<h1 id="2-如何反编译java的class文件"><a href="#2-如何反编译java的class文件" class="headerlink" title="2.如何反编译java的class文件"></a>2.如何反编译java的class文件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javap -c 文件名</span><br></pre></td></tr></table></figure>
+<p><img src="D:\admin\Desktop\笔记\Spring笔记\images\1574144911.png" alt="image-20191119142843831"></p>
+<h1 id="3-查询日志"><a href="#3-查询日志" class="headerlink" title="3.查询日志"></a>3.查询日志</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f name.log</span><br></pre></td></tr></table></figure>
+<h1 id="4-常用的tar解压命令"><a href="#4-常用的tar解压命令" class="headerlink" title="4.常用的tar解压命令"></a>4.常用的tar解压命令</h1><p>常用的tar解压命令总结下，当作备忘：</p>
+<p>tar</p>
+<p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
+<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
+<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<p># tar -cf all.tar *.jpg<br>这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</p>
+<p># tar -rf all.tar *.gif<br>这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。</p>
+<p># tar -uf all.tar logo.gif<br>这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。</p>
+<p># tar -tf all.tar<br>这条命令是列出all.tar包中所有文件，-t是列出文件的意思</p>
+<p># tar -xf all.tar<br>这条命令是解出all.tar包中所有文件，-x是解开的意思</p>
+<p>压缩</p>
+<ul>
+<li>tar –cvf jpg.tar *.jpg 将目录里所有jpg文件打包成tar.jpg</li>
+<li>tar –czf jpg.tar.gz *.jpg  将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz</li>
+<li>tar –cjf jpg.tar.bz2 *.jpg 将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</li>
+<li>tar –cZf jpg.tar.Z *.jpg  将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</li>
+<li>rar a jpg.rar *.jpg rar格式的压缩，需要先下载rar for linux</li>
+<li>zip jpg.zip *.jpg  zip格式的压缩，需要先下载zip for linux </li>
+</ul>
+<p>解压</p>
+<ul>
+<li>tar –xvf file.tar 解压 tar包</li>
+<li>tar -xzvf file.tar.gz 解压tar.gz</li>
+<li>tar -xjvf file.tar.bz2  解压 tar.bz2</li>
+<li>tar –xZvf file.tar.Z  解压tar.Z</li>
+<li>unrar e file.rar 解压rar</li>
+<li>unzip file.zip 解压zip</li>
+</ul>
+<p>总结</p>
+<ol>
+<li>*.tar 用 tar –xvf 解压</li>
+<li>*.gz 用 gzip -d或者gunzip 解压</li>
+<li><em>.tar.gz和</em>.tgz 用 tar –xzf 解压</li>
+<li>*.bz2 用 bzip2 -d或者用bunzip2 解压</li>
+<li>*.tar.bz2用tar –xjf 解压</li>
+<li>*.Z 用 uncompress 解压</li>
+<li>*.tar.Z 用tar –xZf 解压</li>
+<li>*.rar 用 unrar e解压</li>
+<li>*.zip 用 unzip 解压</li>
+</ol>
+<p>linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩。</p>
+<p>1．命令格式：</p>
+<p>tar[必要参数][选择参数][文件] </p>
+<p>2．命令功能：</p>
+<p>用来压缩和解压文件。tar本身不具有压缩功能。他是调用压缩功能实现的 </p>
+<p>3．命令参数：</p>
+<p>必要参数有如下：</p>
+<p>-A 新增压缩文件到已存在的压缩</p>
+<p>-B 设置区块大小</p>
+<p>-c 建立新的压缩文件</p>
+<p>-d 记录文件的差别</p>
+<p>-r 添加文件到已经压缩的文件</p>
+<p>-u 添加改变了和现有的文件到已经存在的压缩文件</p>
+<p>-x 从压缩的文件中提取文件</p>
+<p>-t 显示压缩文件的内容</p>
+<p>-z 支持gzip解压文件</p>
+<p>-j 支持bzip2解压文件</p>
+<p>-Z 支持compress解压文件</p>
+<p>-v 显示操作过程</p>
+<p>-l 文件系统边界设置</p>
+<p>-k 保留原有文件不覆盖</p>
+<p>-m 保留文件不被覆盖</p>
+<p>-W 确认压缩文件的正确性</p>
+<p>可选参数如下：</p>
+<p>-b 设置区块数目</p>
+<p>-C 切换到指定目录</p>
+<p>-f 指定压缩文件</p>
+<p>–help 显示帮助信息</p>
+<p>–version 显示版本信息</p>
+<p>4．常见解压/压缩命令</p>
+<p>tar<br>解包：tar xvf FileName.tar<br>打包：tar cvf FileName.tar DirName<br>（注：tar是打包，不是压缩！）</p>
+<p>.gz<br>解压1：gunzip FileName.gz<br>解压2：gzip -d FileName.gz<br>压缩：gzip FileName</p>
+<p>.tar.gz 和 .tgz<br>解压：tar zxvf FileName.tar.gz<br>压缩：tar zcvf FileName.tar.gz DirName</p>
+<p>.bz2<br>解压1：bzip2 -d FileName.bz2<br>解压2：bunzip2 FileName.bz2<br>压缩： bzip2 -z FileName</p>
+<p>.tar.bz2<br>解压：tar jxvf FileName.tar.bz2<br>压缩：tar jcvf FileName.tar.bz2 DirName</p>
+<p>.bz<br>解压1：bzip2 -d FileName.bz<br>解压2：bunzip2 FileName.bz<br>压缩：未知</p>
+<p>.tar.bz<br>解压：tar jxvf FileName.tar.bz<br>压缩：未知</p>
+<p>.Z<br>解压：uncompress FileName.Z<br>压缩：compress FileName</p>
+<p>.tar.Z<br>解压：tar Zxvf FileName.tar.Z<br>压缩：tar Zcvf FileName.tar.Z DirName</p>
+<p>.zip<br>解压：unzip FileName.zip<br>压缩：zip FileName.zip DirName</p>
+<p>.rar<br>解压：rar x FileName.rar<br>压缩：rar a FileName.rar DirName </p>
+<p>5．使用实例</p>
+<p>实例1：将文件全部打包成tar包</p>
+<p>命令：</p>
+<p>tar -cvf log.tar log2012.log</p>
+<p>tar -zcvf log.tar.gz log2012.log</p>
+<p>tar -jcvf log.tar.bz2 log2012.log</p>
+<h1 id="5-linux的zip压缩"><a href="#5-linux的zip压缩" class="headerlink" title="5.linux的zip压缩"></a>5.linux的zip压缩</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -q -r zipName /dock/ebook</span><br></pre></td></tr></table></figure>
+<p>zipName为压缩后文件名</p>
+<p>/dock/ebook为压缩的路径</p>
+<h1 id="6-centos7重启网络"><a href="#6-centos7重启网络" class="headerlink" title="6.centos7重启网络"></a>6.centos7重启网络</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br><span class="line"></span><br><span class="line">systemctl restart network.service</span><br></pre></td></tr></table></figure>
+<h1 id="7-Centos7虚拟机网络配置"><a href="#7-Centos7虚拟机网络配置" class="headerlink" title="7.Centos7虚拟机网络配置"></a>7.Centos7虚拟机网络配置</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/quintind/article/details/79437838">https://blog.csdn.net/quintind/article/details/79437838</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiehd313/article/details/80814584">https://blog.csdn.net/xiehd313/article/details/80814584</a></p>
+<p>网络配置文件路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
+<p>ens33的UUID号的修改方法<br>A、可输入如下命令获得新UUID号</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># uuidgen ens33</span></span><br><span class="line">223bdb47-2fed-4773-b984-5f5733e61904</span><br></pre></td></tr></table></figure>
+<p>B、将获得的UUID号填入网络配置文件ifcfg-ens33</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">....</span><br><span class="line">NAME=ens33</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line">UUID=223bdb47-2fed-4773-b984-5f5733e61904</span><br></pre></td></tr></table></figure>
+<p>C、重启虚拟机</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network.service</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/leetcode%E5%8A%9B%E6%89%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/leetcode%E5%8A%9B%E6%89%A3/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-19 15:52:45" itemprop="dateModified" datetime="2020-06-19T15:52:45+08:00">2020-06-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1、链表题号"><a href="#1、链表题号" class="headerlink" title="1、链表题号"></a>1、链表题号</h1><p>206(单链表反转)，141(链表中环的检测)，21(两个有序的链表合并)，19(删除链表倒数第n个节点)，876(求链表的中间节点)</p>
+<h1 id="2、栈-Stack-题号"><a href="#2、栈-Stack-题号" class="headerlink" title="2、栈(Stack)题号"></a>2、栈(Stack)题号</h1><p>20,155,232,844,224,682,496</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/java%E8%BF%90%E8%A1%8C%E8%BF%9B%E7%A8%8B%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/java%E8%BF%90%E8%A1%8C%E8%BF%9B%E7%A8%8B%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-13 12:12:34" itemprop="dateModified" datetime="2020-03-13T12:12:34+08:00">2020-03-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="进程命令"><a href="#进程命令" class="headerlink" title="进程命令"></a>进程命令</h1><p>假如某个JAVA进程的JVM参数配置如下：<br>-Xms1G -Xmx2G -Xmn500M -XX:MaxPermSize=64M -XX:+UseConcMarkSweepGC -XX:SurvivorRatio=3,<br>请问eden区最终分配的大小是多少？ </p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx2G -Xms1G -Xmn500M -Xss128k</span><br><span class="line">-Xmx2G：设置JVM最大可用内存为2G。</span><br><span class="line">-Xms1G：设置JVM初始内存为1G。此值可以设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存。</span><br><span class="line">-Xmn500M：设置新生代大小为500M。整个JVM内存大小=新生代大小 + 年老代大小 + 持久代大小。</span><br><span class="line">-XX:SurvivorRatio=3:新生代中又会划分为 Eden 区，from Survivor、to Survivor 区。</span><br><span class="line"></span><br><span class="line">其中 Eden 和 Survivor 区的比例默认是 8:1:1，当然也支持参数调整 -XX:SurvivorRatio=3的话就是3:1:1。</span><br><span class="line">故该题为500*（3/5）=300M.</span><br><span class="line"></span><br><span class="line">-Xms1G -Xmx2G -Xmn500M -XX:MaxPermSize=64M -XX:+UseConcMarkSweepGC -XX:SurvivorRatio=3,</span><br><span class="line">-Xms1G    设置Java堆初始内存为1G    </span><br><span class="line">-Xmx2G    设置Java堆最大值为2G</span><br><span class="line">-Xmn500M    设置新生代大小为500M（一个Eden区，两个Survivor区）</span><br><span class="line">-XX:MaxPermSize=64M    设置永久代大小为64M</span><br><span class="line">-XX:+UseConcMarkSweepGC     设置使用CMS收集器</span><br><span class="line">-XX:SurvivorRatio=3    设置Eden区与Survivor区大小的比例</span><br><span class="line">本题看新生代大小，新生代为500M，三个区比例为3：1：1，很容易计算出Eden大小为300M</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Xms 起始内存</span><br><span class="line">Xmx 最大内存</span><br><span class="line">Xmn 新生代内存</span><br><span class="line">Xss 栈大小。 就是创建线程后，分配给每一个线程的内存大小</span><br><span class="line"></span><br><span class="line">-XX:NewRatio=n:设置年轻代和年老代的比值。如:为3，表示年轻代与年老代比值为1：3，年轻代占整个年轻代年老代和的1/4</span><br><span class="line"></span><br><span class="line">-XX:SurvivorRatio=n:年轻代中Eden区与两个Survivor区的比值。注意Survivor区有两个。如：3，表示Eden：Survivor=3：2，一个Survivor区占整个年轻代的1/5</span><br><span class="line"></span><br><span class="line">-XX:MaxPermSize=n:设置持久代大小</span><br><span class="line"></span><br><span class="line">收集器设置</span><br><span class="line">-XX:+UseSerialGC:设置串行收集器</span><br><span class="line">-XX:+UseParallelGC:设置并行收集器</span><br><span class="line">-XX:+UseParalledlOldGC:设置并行年老代收集器</span><br><span class="line">-XX:+UseConcMarkSweepGC:设置并发收集器</span><br><span class="line">垃圾回收统计信息</span><br><span class="line">-XX:+PrintGC</span><br><span class="line">-XX:+PrintGCDetails</span><br><span class="line">-XX:+PrintGCTimeStamps</span><br><span class="line">-Xloggc:filename</span><br><span class="line">并行收集器设置</span><br><span class="line">-XX:ParallelGCThreads=n:设置并行收集器收集时使用的CPU数。并行收集线程数。</span><br><span class="line">-XX:MaxGCPauseMillis=n:设置并行收集最大暂停时间</span><br><span class="line">-XX:GCTimeRatio=n:设置垃圾回收时间占程序运行时间的百分比。公式为1/(1+n)</span><br><span class="line">并发收集器设置</span><br><span class="line">-XX:+CMSIncrementalMode:设置为增量模式。适用于单CPU情况。</span><br><span class="line">-XX:ParallelGCThreads=n:设置并发收集器年轻代收集方式为并行收集时，使用的CPU数。并行收集线程数。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/java%E7%BA%BF%E7%A8%8B%E5%86%85%E5%AE%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/java%E7%BA%BF%E7%A8%8B%E5%86%85%E5%AE%B9/" class="post-title-link" itemprop="url">Java的多线程学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-31 21:38:51" itemprop="dateModified" datetime="2021-01-31T21:38:51+08:00">2021-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%89%BE%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">找工作</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Java的多线程学习</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/01/java%E7%BA%BF%E7%A8%8B%E5%86%85%E5%AE%B9/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/java%E7%9A%84final/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/01/java%E7%9A%84final/" class="post-title-link" itemprop="url">Java的final</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-31 21:36:11" itemprop="dateModified" datetime="2021-01-31T21:36:11+08:00">2021-01-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Java的final关键字</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/01/java%E7%9A%84final/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description">思考+笔记</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

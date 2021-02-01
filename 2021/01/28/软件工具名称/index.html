@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="软件开发工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工具">
+<meta property="og:url" content="http://example.com/2021/01/28/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7%E5%90%8D%E7%A7%B0/index.html">
+<meta property="og:site_name" content="长夜未央">
+<meta property="og:description" content="软件开发工具">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-28T09:47:00.000Z">
+<meta property="article:modified_time" content="2021-01-28T16:00:46.606Z">
+<meta property="article:tag" content="工具">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/01/28/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7%E5%90%8D%E7%A7%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>软件工具 | 长夜未央</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">长夜未央</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/28/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7%E5%90%8D%E7%A7%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          软件工具
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-28 17:47:00" itemprop="dateCreated datePublished" datetime="2021-01-28T17:47:00+08:00">2021-01-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-29 00:00:46" itemprop="dateModified" datetime="2021-01-29T00:00:46+08:00">2021-01-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">软件开发工具</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1、开发"><a href="#1、开发" class="headerlink" title="1、开发"></a>1、开发</h1><h2 id="IDE：IntelliJ-IDEA，eclipse"><a href="#IDE：IntelliJ-IDEA，eclipse" class="headerlink" title="IDE：IntelliJ IDEA，eclipse"></a>IDE：IntelliJ IDEA，eclipse</h2><h2 id="代码架构工具：maven"><a href="#代码架构工具：maven" class="headerlink" title="代码架构工具：maven"></a>代码架构工具：maven</h2><h2 id="代码托管工具：git，svn"><a href="#代码托管工具：git，svn" class="headerlink" title="代码托管工具：git，svn"></a>代码托管工具：git，svn</h2><h2 id="git可视化软件：sourceTree"><a href="#git可视化软件：sourceTree" class="headerlink" title="git可视化软件：sourceTree"></a>git可视化软件：sourceTree</h2><h2 id="反编译工具：jd-gui，jadx"><a href="#反编译工具：jd-gui，jadx" class="headerlink" title="反编译工具：jd-gui，jadx"></a>反编译工具：jd-gui，jadx</h2><h2 id="虚拟机软件：VMWare，VirtualBox"><a href="#虚拟机软件：VMWare，VirtualBox" class="headerlink" title="虚拟机软件：VMWare，VirtualBox"></a>虚拟机软件：VMWare，VirtualBox</h2><h2 id="linux系统版本：centos7，ubuntu，redhat"><a href="#linux系统版本：centos7，ubuntu，redhat" class="headerlink" title="linux系统版本：centos7，ubuntu，redhat"></a>linux系统版本：centos7，ubuntu，redhat</h2><h2 id="linux终端工具：MobaXterm，Xftp，XShell，SmarTTY"><a href="#linux终端工具：MobaXterm，Xftp，XShell，SmarTTY" class="headerlink" title="linux终端工具：MobaXterm，Xftp，XShell，SmarTTY"></a>linux终端工具：MobaXterm，Xftp，XShell，SmarTTY</h2><h2 id="url测试工具：postman"><a href="#url测试工具：postman" class="headerlink" title="url测试工具：postman"></a>url测试工具：postman</h2><h2 id="数据库：mysql"><a href="#数据库：mysql" class="headerlink" title="数据库：mysql"></a>数据库：mysql</h2><h2 id="数据库操作工具：DataGrip，Dbeaver，Navicate"><a href="#数据库操作工具：DataGrip，Dbeaver，Navicate" class="headerlink" title="数据库操作工具：DataGrip，Dbeaver，Navicate"></a>数据库操作工具：DataGrip，Dbeaver，Navicate</h2><h2 id="数据库设计工具：power-Designer，PDMan"><a href="#数据库设计工具：power-Designer，PDMan" class="headerlink" title="数据库设计工具：power Designer，PDMan"></a>数据库设计工具：power Designer，PDMan</h2><h2 id="服务器端：tomcat，jetty"><a href="#服务器端：tomcat，jetty" class="headerlink" title="服务器端：tomcat，jetty"></a>服务器端：tomcat，jetty</h2><h2 id="代理服务器：nginx"><a href="#代理服务器：nginx" class="headerlink" title="代理服务器：nginx"></a>代理服务器：nginx</h2><h2 id="类图工具：StarUML"><a href="#类图工具：StarUML" class="headerlink" title="类图工具：StarUML"></a>类图工具：StarUML</h2><h2 id="思维导图：XMind-ZEN，Mind-Manager"><a href="#思维导图：XMind-ZEN，Mind-Manager" class="headerlink" title="思维导图：XMind ZEN，Mind Manager"></a>思维导图：XMind ZEN，Mind Manager</h2><h2 id="文本编辑工具：Notepad"><a href="#文本编辑工具：Notepad" class="headerlink" title="文本编辑工具：Notepad++"></a>文本编辑工具：Notepad++</h2><h2 id="笔记工具：Typora，印象笔记"><a href="#笔记工具：Typora，印象笔记" class="headerlink" title="笔记工具：Typora，印象笔记"></a>笔记工具：Typora，印象笔记</h2><h2 id="FTP连接软件：FileZilla"><a href="#FTP连接软件：FileZilla" class="headerlink" title="FTP连接软件：FileZilla"></a>FTP连接软件：FileZilla</h2><h1 id="2、电脑必备"><a href="#2、电脑必备" class="headerlink" title="2、电脑必备"></a>2、电脑必备</h1><h2 id="浏览器：chrome，firefox"><a href="#浏览器：chrome，firefox" class="headerlink" title="浏览器：chrome，firefox"></a>浏览器：chrome，firefox</h2><h2 id="chrome插件：adblock，IDM，Tampermonkey"><a href="#chrome插件：adblock，IDM，Tampermonkey" class="headerlink" title="chrome插件：adblock，IDM，Tampermonkey"></a>chrome插件：adblock，IDM，Tampermonkey</h2><h2 id="在线文件同步：Microsoft-OneDrive"><a href="#在线文件同步：Microsoft-OneDrive" class="headerlink" title="在线文件同步：Microsoft OneDrive"></a>在线文件同步：Microsoft OneDrive</h2><h2 id="全盘搜索软件：Everything"><a href="#全盘搜索软件：Everything" class="headerlink" title="全盘搜索软件：Everything"></a>全盘搜索软件：Everything</h2><h2 id="文本比较工具：Beyond-Compare"><a href="#文本比较工具：Beyond-Compare" class="headerlink" title="文本比较工具：Beyond Compare"></a>文本比较工具：Beyond Compare</h2><h2 id="PDF工具：Adobe-Acrobat-DC"><a href="#PDF工具：Adobe-Acrobat-DC" class="headerlink" title="PDF工具：Adobe Acrobat DC"></a>PDF工具：Adobe Acrobat DC</h2><h2 id="实时翻译字典：网易有道词典"><a href="#实时翻译字典：网易有道词典" class="headerlink" title="实时翻译字典：网易有道词典"></a>实时翻译字典：网易有道词典</h2><h2 id="聊天工具：微信，QQ"><a href="#聊天工具：微信，QQ" class="headerlink" title="聊天工具：微信，QQ"></a>聊天工具：微信，QQ</h2><h2 id="微信防撤回工具：-https-github-com-huiyadanli-RevokeMsgPatcher"><a href="#微信防撤回工具：-https-github-com-huiyadanli-RevokeMsgPatcher" class="headerlink" title="微信防撤回工具： https://github.com/huiyadanli/RevokeMsgPatcher"></a>微信防撤回工具： <a target="_blank" rel="noopener" href="https://github.com/huiyadanli/RevokeMsgPatcher">https://github.com/huiyadanli/RevokeMsgPatcher</a></h2><h2 id="音乐软件：网易云音乐"><a href="#音乐软件：网易云音乐" class="headerlink" title="音乐软件：网易云音乐"></a>音乐软件：网易云音乐</h2><h2 id="百度云破解工具：亿寻"><a href="#百度云破解工具：亿寻" class="headerlink" title="百度云破解工具：亿寻"></a>百度云破解工具：亿寻</h2><h2 id="磁链下载：qBittorent"><a href="#磁链下载：qBittorent" class="headerlink" title="磁链下载：qBittorent"></a>磁链下载：qBittorent</h2><blockquote>
+<p>软件工具</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"># 工具</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/26/%E5%90%84%E7%BD%91%E7%AB%99%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/" rel="prev" title="视频下载">
+      <i class="fa fa-chevron-left"></i> 视频下载
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/29/arthas%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" rel="next" title="arthas使用">
+      arthas使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E5%BC%80%E5%8F%91"><span class="nav-number">1.</span> <span class="nav-text">1、开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE%EF%BC%9AIntelliJ-IDEA%EF%BC%8Ceclipse"><span class="nav-number">1.1.</span> <span class="nav-text">IDE：IntelliJ IDEA，eclipse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%9E%B6%E6%9E%84%E5%B7%A5%E5%85%B7%EF%BC%9Amaven"><span class="nav-number">1.2.</span> <span class="nav-text">代码架构工具：maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B7%A5%E5%85%B7%EF%BC%9Agit%EF%BC%8Csvn"><span class="nav-number">1.3.</span> <span class="nav-text">代码托管工具：git，svn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6%EF%BC%9AsourceTree"><span class="nav-number">1.4.</span> <span class="nav-text">git可视化软件：sourceTree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7%EF%BC%9Ajd-gui%EF%BC%8Cjadx"><span class="nav-number">1.5.</span> <span class="nav-text">反编译工具：jd-gui，jadx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AF%E4%BB%B6%EF%BC%9AVMWare%EF%BC%8CVirtualBox"><span class="nav-number">1.6.</span> <span class="nav-text">虚拟机软件：VMWare，VirtualBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E7%B3%BB%E7%BB%9F%E7%89%88%E6%9C%AC%EF%BC%9Acentos7%EF%BC%8Cubuntu%EF%BC%8Credhat"><span class="nav-number">1.7.</span> <span class="nav-text">linux系统版本：centos7，ubuntu，redhat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7%EF%BC%9AMobaXterm%EF%BC%8CXftp%EF%BC%8CXShell%EF%BC%8CSmarTTY"><span class="nav-number">1.8.</span> <span class="nav-text">linux终端工具：MobaXterm，Xftp，XShell，SmarTTY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#url%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%EF%BC%9Apostman"><span class="nav-number">1.9.</span> <span class="nav-text">url测试工具：postman</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9Amysql"><span class="nav-number">1.10.</span> <span class="nav-text">数据库：mysql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E5%B7%A5%E5%85%B7%EF%BC%9ADataGrip%EF%BC%8CDbeaver%EF%BC%8CNavicate"><span class="nav-number">1.11.</span> <span class="nav-text">数据库操作工具：DataGrip，Dbeaver，Navicate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7%EF%BC%9Apower-Designer%EF%BC%8CPDMan"><span class="nav-number">1.12.</span> <span class="nav-text">数据库设计工具：power Designer，PDMan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%9Atomcat%EF%BC%8Cjetty"><span class="nav-number">1.13.</span> <span class="nav-text">服务器端：tomcat，jetty</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%9Anginx"><span class="nav-number">1.14.</span> <span class="nav-text">代理服务器：nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9B%BE%E5%B7%A5%E5%85%B7%EF%BC%9AStarUML"><span class="nav-number">1.15.</span> <span class="nav-text">类图工具：StarUML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%EF%BC%9AXMind-ZEN%EF%BC%8CMind-Manager"><span class="nav-number">1.16.</span> <span class="nav-text">思维导图：XMind ZEN，Mind Manager</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7%EF%BC%9ANotepad"><span class="nav-number">1.17.</span> <span class="nav-text">文本编辑工具：Notepad++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0%E5%B7%A5%E5%85%B7%EF%BC%9ATypora%EF%BC%8C%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0"><span class="nav-number">1.18.</span> <span class="nav-text">笔记工具：Typora，印象笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP%E8%BF%9E%E6%8E%A5%E8%BD%AF%E4%BB%B6%EF%BC%9AFileZilla"><span class="nav-number">1.19.</span> <span class="nav-text">FTP连接软件：FileZilla</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E7%94%B5%E8%84%91%E5%BF%85%E5%A4%87"><span class="nav-number">2.</span> <span class="nav-text">2、电脑必备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%9Achrome%EF%BC%8Cfirefox"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器：chrome，firefox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chrome%E6%8F%92%E4%BB%B6%EF%BC%9Aadblock%EF%BC%8CIDM%EF%BC%8CTampermonkey"><span class="nav-number">2.2.</span> <span class="nav-text">chrome插件：adblock，IDM，Tampermonkey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%BA%BF%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%EF%BC%9AMicrosoft-OneDrive"><span class="nav-number">2.3.</span> <span class="nav-text">在线文件同步：Microsoft OneDrive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E7%9B%98%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6%EF%BC%9AEverything"><span class="nav-number">2.4.</span> <span class="nav-text">全盘搜索软件：Everything</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%AF%94%E8%BE%83%E5%B7%A5%E5%85%B7%EF%BC%9ABeyond-Compare"><span class="nav-number">2.5.</span> <span class="nav-text">文本比较工具：Beyond Compare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF%E5%B7%A5%E5%85%B7%EF%BC%9AAdobe-Acrobat-DC"><span class="nav-number">2.6.</span> <span class="nav-text">PDF工具：Adobe Acrobat DC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%97%B6%E7%BF%BB%E8%AF%91%E5%AD%97%E5%85%B8%EF%BC%9A%E7%BD%91%E6%98%93%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8"><span class="nav-number">2.7.</span> <span class="nav-text">实时翻译字典：网易有道词典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7%EF%BC%9A%E5%BE%AE%E4%BF%A1%EF%BC%8CQQ"><span class="nav-number">2.8.</span> <span class="nav-text">聊天工具：微信，QQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E9%98%B2%E6%92%A4%E5%9B%9E%E5%B7%A5%E5%85%B7%EF%BC%9A-https-github-com-huiyadanli-RevokeMsgPatcher"><span class="nav-number">2.9.</span> <span class="nav-text">微信防撤回工具： https:&#x2F;&#x2F;github.com&#x2F;huiyadanli&#x2F;RevokeMsgPatcher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9F%B3%E4%B9%90%E8%BD%AF%E4%BB%B6%EF%BC%9A%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90"><span class="nav-number">2.10.</span> <span class="nav-text">音乐软件：网易云音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BE%E5%BA%A6%E4%BA%91%E7%A0%B4%E8%A7%A3%E5%B7%A5%E5%85%B7%EF%BC%9A%E4%BA%BF%E5%AF%BB"><span class="nav-number">2.11.</span> <span class="nav-text">百度云破解工具：亿寻</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E9%93%BE%E4%B8%8B%E8%BD%BD%EF%BC%9AqBittorent"><span class="nav-number">2.12.</span> <span class="nav-text">磁链下载：qBittorent</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description">思考+笔记</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

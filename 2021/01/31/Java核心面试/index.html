@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Java核心面试的题目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java核心面试">
+<meta property="og:url" content="http://example.com/2021/01/31/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/index.html">
+<meta property="og:site_name" content="长夜未央">
+<meta property="og:description" content="Java核心面试的题目">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/20bc6a900fc0b829c2f0e723df050732.png">
+<meta property="og:image" content="http://example.com/images/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/accba531a365e6ae39614ebfa3273900.png">
+<meta property="og:image" content="http://example.com/images/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/675536edf1563b11ab7ead0def1215c7.png">
+<meta property="og:image" content="http://example.com/images/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/6577016_1502936071145_236678ED840D4B66889A095C455D1A00.png">
+<meta property="article:published_time" content="2021-01-31T12:20:18.000Z">
+<meta property="article:modified_time" content="2021-01-31T13:36:44.893Z">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/20bc6a900fc0b829c2f0e723df050732.png">
+
+<link rel="canonical" href="http://example.com/2021/01/31/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Java核心面试 | 长夜未央</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">长夜未央</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/31/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java核心面试
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-31 20:20:18 / 修改时间：21:36:44" itemprop="dateCreated datePublished" datetime="2021-01-31T20:20:18+08:00">2021-01-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%89%BE%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">找工作</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Java核心面试的题目</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Java程序初始化顺序：</p>
+<ol>
+<li>父类的静态代码块</li>
+<li>子类的静态代码块</li>
+<li>父类的普通代码块</li>
+<li>父类的构造方法</li>
+<li>子类的普通代码块</li>
+<li>子类的构造方法</li>
+</ol>
+<p>jvm堆分为：新生代（一般是一个Eden区，两个Survivor区），老年代（old区）。</p>
+<p>常量池属于 PermGen（方法区</p>
+<h1 id="1、对Java平台的理解"><a href="#1、对Java平台的理解" class="headerlink" title="1、对Java平台的理解"></a>1、对Java平台的理解</h1><p>Java本身是一种面向对象的语言，最显著的特性有两个方面：</p>
+<ol>
+<li><p><strong>“书写一次，到处运行”</strong>(Write once, run anywhere)，能够非常容易的获得跨平台运行能力。</p>
+</li>
+<li><p><strong>“垃圾收集”</strong>(GC, Garbage Collection)，Java通过垃圾收集器(Grabage Collector)回收分配内存，大部分情况下，程序员不需要操心内存的分配和回收。</p>
+</li>
+<li><p>还有就是日常会接触到的JRE(Java Runtime Environment)或者JDK(Java Development Kit)。</p>
+<ol>
+<li>JRE也就是Java运行环境，包含了JVM和Java类库，以及一些模块。</li>
+<li>而JDK可以看作是JRE的一个超集，提供了更多工具，比如编译器、各种诊断工具等。</li>
+</ol>
+<p><img src="/images/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/20bc6a900fc0b829c2f0e723df050732.png" alt="20bc6a900fc0b829c2f0e723df050732"></p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Java特性：</span><br><span class="line">    面向对象（继承、封装、多态）</span><br><span class="line">    平台无关性（JVM运行.class文件）</span><br><span class="line">    语言（泛型、Lambda）</span><br><span class="line">    类库（集合、并发、网络、IO/NIO）……</span><br></pre></td></tr></table></figure>
+<p>发展流程，JDK5(重写bug)，JDK6(商用最稳定版)，JDK7(switch的字符串支持)，JDK8(函数式编程)，一直在发展进化 </p>
+<h1 id="2、Java是解释执行吗？"><a href="#2、Java是解释执行吗？" class="headerlink" title="2、Java是解释执行吗？"></a>2、Java是解释执行吗？</h1><p>不正确！<br>1，Java源代码经过Javac编译成.class文件<br>2，.class文件经JVM解析或编译运行。<br>（1）解析:.class文件经过JVM内嵌的解析器解析执行。<br>（2）编译:存在JIT编译器（Just In Time Compile 即时编译器，也叫运行时编译）把经常运行的代码作为”热点代码”编译与本地平台相关的机器码，并进行各种层次的优化。<br>（3）AOT编译器: Java 9提供的直接将所有代码编译成机器码执行。</p>
+<p><strong>Java程序执行步骤：</strong></p>
+<ul>
+<li>首先javac编译器将源代码编译成字节码。</li>
+<li>然后通过JVM类加载器(Class Loader)加载字节码文件，然后通过解释器<strong>逐行解释执行</strong>，这种方式的执行速度相对会比较慢。</li>
+<li>有些方法和代码块是高频率调用的，也就是所谓的<strong>热点代码</strong>，所以引进JIT技术，<strong>提前将这类字节码直接编译成本地机器码</strong>。这样类似于缓存技术，运行时再遇到这类代码直接可以执行，而不是先解释后执行。  </li>
+</ul>
+<p>解释执行和编译执行区别：前者相当与同声传译，逐行读取；后者相当于放录音，直接执行</p>
+<h1 id="3、Exception与Error的区别"><a href="#3、Exception与Error的区别" class="headerlink" title="3、Exception与Error的区别"></a>3、Exception与Error的区别</h1><p><img src="/images/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/accba531a365e6ae39614ebfa3273900.png" alt="accba531a365e6ae39614ebfa3273900"></p>
+<p><strong>Exception和Error都是继承了Throwable类</strong>，在Java中只有Throwable类型的实例才可以被抛出（throw）或者捕获（catch），它是异常处理机制的基本组成类型。</p>
+<p>Exception：程序正常运行中，可以预料的意外情况，可能并且应该被捕获，进行相应处理。</p>
+<p>Error：在正常情况下，不大可能出现的情况，绝大部分的Error都会导致程序(比如JVM自身)处于非正常的、不可恢复状态。<strong>既然是非正常情况，所以不便于也不需要捕获</strong>，常见的比如OutOfMerroryError，StackOverFlowError，NoClassDefFoundError之类，都是Error的子类。</p>
+<p><strong>Exception又分为可检查(checked)异常和不检查(unchecked)异常</strong>：</p>
+<ul>
+<li><strong>可检查异常</strong>（<strong>非运行时异常</strong>）在源代码中必须显式地进行捕获处理，这是编译期检查的一部分。如IOException(FileNotFoundException)，SQLException…</li>
+<li><strong>不检查异常</strong>就是所谓的<strong>运行时异常</strong>，如NullPointerException、ArrayIndexOutOfBoundsException之类，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// try-with-resources, multiple catch</span></span><br><span class="line"><span class="keyword">try</span> (BufferedReader br = <span class="keyword">new</span> BufferedReader(…);</span><br><span class="line">     BufferedWriter writer = <span class="keyword">new</span> BufferedWriter(…)) &#123;<span class="comment">// Try-with-resources</span></span><br><span class="line"><span class="comment">// do something</span></span><br><span class="line"><span class="keyword">catch</span> ( IOException | XEception e) &#123;<span class="comment">// Multiple catch</span></span><br><span class="line">   <span class="comment">// Handle it</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<hr>
+<p>​    一、<strong>尽量不要捕获类似Excpeiont这样的通用异常，而是应该捕获特定异常。</strong>这是因为在日常的开发和合作中，我们读代码的机会往往会超过写代码，软件工程是一门协作的艺术，让自己的代码能够只管地体现出尽量多的信息，而泛泛的Exception，会隐藏掉我们的目的。<strong>同时也要保证程序不会捕获到我们不希望捕获的异常</strong>（如，可能希望RuntimeException被扩散出来，而不是被捕获）。</p>
+<p>​    二、<strong>不要生吞(swallow)异常</strong>。这是异常处理中要特别注意的事情，因为很可能会导致非常难以诊断的诡异情况。如果我们不把异常抛出来，或者也没有输出到日志(Logger)之类，程序可能在后续代码以不可控的方式结束。没人能够轻易判断究竟哪里抛出了异常，以及是什么原因产生了异常。举例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">   <span class="comment">// 业务代码</span></span><br><span class="line">   <span class="comment">// …</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码作为一段实验代码，它没有任何问题，但是在产品代码中，通常不允许这样处理。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/9/docs/api/java/lang/Throwable.html#printStackTrace">printStackTrace()</a>的文档，开头就是“Prints this throwable and its backtrace to the <strong>standard error stream</strong>”。问题就这这里，在稍微复杂一点的生产系统，标准出错(STERR)不是一个合适的输出选项，因为很难判断出到底输出到哪里去了</p>
+<h1 id="4、NoClassDefFoundError与ClassNotFoundException的区别"><a href="#4、NoClassDefFoundError与ClassNotFoundException的区别" class="headerlink" title="4、NoClassDefFoundError与ClassNotFoundException的区别"></a>4、NoClassDefFoundError与ClassNotFoundException的区别</h1><p>NoClassDefFoundError是一个错误(Error)，而ClassNotFoundException是一个异常，</p>
+<h1 id="5、final、finally、finalize有什么不同？"><a href="#5、final、finally、finalize有什么不同？" class="headerlink" title="5、final、finally、finalize有什么不同？"></a>5、final、finally、finalize有什么不同？</h1><p><strong>final</strong> 可以用来修饰类、方法、变量。分别有不同的意义：</p>
+<p>​    1. final修饰的类(class)代表不可以继承扩展</p>
+<p>​    2. final修饰的变量是不可修改的</p>
+<p>​    3. final修饰的方法是不可以被子类重写的(override)</p>
+<p><strong>finally</strong> 是Java保证重要代码一定要被执行的一种机制。可以使用try-finally或者try-catch-finally来进行类似关闭JDBC链接、保证unlock锁等动作</p>
+<p><strong>finalize</strong> 是基础类java.lang.Object的一个方法，它的设计目的是保证对象在被垃圾收集前完成特定资源的回收。<em>finalize机制现在已经不推荐使用，并且在JDK9开始被标记位deprecated(弃用)</em></p>
+<ul>
+<li>使用final修饰参数或者变量，也可以清除避免意外赋值导致的编程错误，甚至，有人明确推荐将所有方法参数、本地变量、成员变量生命为final。</li>
+<li>final变量产生了某种程度的不可变(immutable)的效果，所以，可以用于保护只读数据，尤其是在并发编程中，因为明确地不能再赋值final量，有利于减少额外的同步开销，也可以省去一些防御性拷贝的必要。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    System.exit(<span class="number">1</span>);</span><br><span class="line">&#125; <span class="keyword">finally</span>&#123;</span><br><span class="line">    System.out.println(“Print from <span class="keyword">finally</span>”);</span><br><span class="line">&#125;</span><br><span class="line">这里的<span class="keyword">finally</span>里面的代码不会被执行，是一个特例</span><br></pre></td></tr></table></figure>
+<p><strong><em>注意</em></strong>：**final并不等同于immutable(不可变)**，如下面的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> List&lt;String&gt; strList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">strList.add(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">strList.add(<span class="string">&quot;world&quot;</span>);  </span><br><span class="line"><span class="comment">// List.of为JDK9的特性，创建的list为不可变list，使用add会抛出异常</span></span><br><span class="line">List&lt;String&gt; unmodifiableStrList = List.of(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;world&quot;</span>);</span><br><span class="line">unmodifiableStrList.add(<span class="string">&quot;again&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>final只能约束strList这个引用不能被赋值，但是strList对象的行为不受限制，添加元素操作完全正常。如果对象本身是不可变的，需要相应的类支持不可变行为。</p>
+<p>如果要实现immutable(不可变)的类，需要以下几点</p>
+<ul>
+<li>将class自身声明为final，这样别人就不能通过扩展来绕过限制了。</li>
+<li>将所有成员变量定义为private和final，并且不要实现setter方法。</li>
+<li>通常构造对象时，成员变量使用深度拷贝来初始化，而不是直接赋值，这是一种防御措施，因为无法确定输入对象不被其他人修改。</li>
+<li>如果确实需要实现getter方法，或者其他可能会返回内部状态的方法，使用copy-on-write原则，创建私有的copy。</li>
+</ul>
+<p>finally不会执行的情况如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.try-catch异常退出</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System.exit(<span class="number">1</span>);</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.无限循环</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.当线程被杀死</span></span><br><span class="line">当执行<span class="keyword">try</span>，<span class="keyword">finally</span>的线程被杀死时，<span class="keyword">finally</span>也无法执行</span><br></pre></td></tr></table></figure>
+<p><strong>总结：1.不要在finally中使用return语句。2.finally总是执行，除非程序或者线程被中断</strong></p>
+<h1 id="6、String、StringBuffer、StringBuilder有什么区别？"><a href="#6、String、StringBuffer、StringBuilder有什么区别？" class="headerlink" title="6、String、StringBuffer、StringBuilder有什么区别？"></a>6、String、StringBuffer、StringBuilder有什么区别？</h1><p><strong>String</strong>是Java语言非常基础和重要的类，提供了构造和管理字符串的各种基本逻辑。它是典型的immutable类，<strong>被声明为final class，所有属性也都是final的</strong>。也**<em>由于它的不可变性，类似拼接、裁剪字符串等动作，都会产生新的String对象**</em>。由于字符串操作的普遍性，所以相关操作的效率往往对应用性能有明显影响。</p>
+<p><strong>StringBuffer</strong>是为解决String因拼接产生太多中间对象的问题而提供的一个类，我们可以使用append或者add方法，把字符串添加到已有序列的末尾或者指定位置。<strong>StringBuffer本质是一个线程安全的可修改字符序列</strong>，它保证了线程安全，也随之带来了额外的性能开销，所以除非有线程安全的需要，不然还是推荐使用它的后继者，也就是StringBuilder。</p>
+<p><strong>StringBuilder</strong>是Java 1.5中新增的，在能力上和StringBuffer没有本质区别，但是<strong>它去掉了线程安全的部分，有效减小了开销，是绝大部分情况下字符串拼接的首选。</strong></p>
+<h1 id="7、谈谈Java反射机制，动态代理是基于什么原理？"><a href="#7、谈谈Java反射机制，动态代理是基于什么原理？" class="headerlink" title="7、谈谈Java反射机制，动态代理是基于什么原理？"></a>7、谈谈Java反射机制，动态代理是基于什么原理？</h1><p>编程语言有很多种分类角度，<strong>动态类型和静态类型</strong>就是其中一种分类角度，简单<strong>区分就是语言类型信息是在运行时检查，还是编译期检查。</strong></p>
+<p><strong>通常认为Java是静态的强类型语言，但是因为提供了类似反射等机制，也具备了部分动态类型语言的能力</strong></p>
+<p><strong>反射机制是Java语言提供的一种基础功能</strong>，赋予程序在运行时自省(introspect，官方用语)的能力，通过反射我们可以直接操作类或者对象，比如获取某个对象的类定义，获取类声明的属性和方法，调用方法或者构造对象，甚至可以运行时修改类定义。</p>
+<p><strong>动态代理是一种方便运行时动态构建代理、动态处理代理方法调用的机制</strong>，很多场景都是利用类似机制做到的，比如用来包装RPC调用、面向切面的编程(AOP).</p>
+<p>实现动态代理的方式有如下几种，比如JDK自身提供的动态代理，就是主要利用了上面提到的反射机制；利用传说中更高性能的字节码操作机制，类似ASM、cglib(基于ASM)、Javassist等。</p>
+<h1 id="9、int和Integer有什么区别？"><a href="#9、int和Integer有什么区别？" class="headerlink" title="9、int和Integer有什么区别？"></a>9、int和Integer有什么区别？</h1><p><strong>Java的8种基础数据类型：byte、char、short、int、long、float、double、boolean</strong></p>
+<p>Integer是int对应的包装类，它有一个int类型的字段存储数据，并且提供了基本操作，比如数学运算、int和字符串之间转换等。在Java5中，引入了**自动装箱与自动拆箱功能(boxing/unboxing)**，Java可以根据上下文，自动进行转换，极大地简化了相关编程。</p>
+<p>Integer的值缓存，构建Integer对象的传统方式是直接调用构造器，直接new一个对象。根据实践，大部分数据操作都是几种在有限的、较小的数值范围，<strong>因此，在Java5中增加了静态工厂方法valueOf，调用它时会利用一个缓存机制，带来明显的性能改进，这个值默认缓存是-128~127之间。</strong>例子如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = <span class="number">100</span>;</span><br><span class="line">Integer y = <span class="keyword">new</span> Integer(<span class="number">100</span>);</span><br><span class="line"><span class="comment">// x == y 为true</span></span><br><span class="line"><span class="keyword">int</span> m = <span class="number">128</span>;</span><br><span class="line">Integer n = <span class="keyword">new</span> Integer(<span class="number">128</span>);</span><br><span class="line"><span class="comment">// m == n 为false</span></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="10、对比Vector、ArrayList、LinkedList有何区别？"><a href="#10、对比Vector、ArrayList、LinkedList有何区别？" class="headerlink" title="10、对比Vector、ArrayList、LinkedList有何区别？"></a>10、对比Vector、ArrayList、LinkedList有何区别？</h1><p>三者都是实现集合框架的List，也就是所谓的<strong>有序集合</strong>，因此具体功能也比较近似，比如都提供按照位置进行定位、添加或者删除的操作，都提供迭代器以遍历其内容。但是由于具体的设计区别，在行为、性能、线程安全方面，表现又有很大不同。</p>
+<p><strong>Vector是Java早期提供的线程安全的动态数组</strong>，如果不需要线程安全，并不建议选择，毕竟同步是有额外开销的。Vector内部是使用对象数组来保存数据，可以根据需要自动的增加容量，当数据已满时，会创建新的数组，并拷贝原有数组数据。</p>
+<p><strong>ArrayList是应用更加广泛的动态数组实现</strong>，它本身不是线程安全的，所以性能上会好很多。与Vector近似，ArrayList也是可以根据需要调整容量，不过<strong>两者的调整逻辑有所区别，Vector在扩容时会提高1倍，而ArrayList则是增加50%。</strong></p>
+<p><strong>LinkedList顾名思义是Java提供的双向链表，所以不需要像上面两种那样调整容量，它也不是线程安全的。</strong></p>
+<ul>
+<li><p><strong>Vector和ArrayList作为动态数组，其内部元素以数组形式顺序存储的，所以非常适合随机访问的场合。</strong>不过除了尾部插入和删除元素之外，修改的性能会相对较差，比如在中间位置插入一个元素，需要移动后续所有元素。</p>
+</li>
+<li><p>而<strong>LinkedList进行节点插入、删除却要高效得多，但是随机访问性能则要比动态数据慢。</strong></p>
+<p><img src="/images/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/675536edf1563b11ab7ead0def1215c7.png" alt="675536edf1563b11ab7ead0def1215c7"></p>
+<p><img src="/images/Java%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95/6577016_1502936071145_236678ED840D4B66889A095C455D1A00.png" alt="6577016_1502936071145_236678ED840D4B66889A095C455D1A00"></p>
+</li>
+</ul>
+<h1 id="11、对比Hashtable、HashMap、TreeMap有什么不同？"><a href="#11、对比Hashtable、HashMap、TreeMap有什么不同？" class="headerlink" title="11、对比Hashtable、HashMap、TreeMap有什么不同？"></a>11、对比Hashtable、HashMap、TreeMap有什么不同？</h1><p>Hashtable、HashMap、TreeMap都是最常见的一些Map实现，是以键值对的形式存储和操作数据的容器类型。</p>
+<p><strong>Hashtable是早期java类库提供的一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8">哈希表</a>实现，本身是同步的，不支持null键和值，由于同步导致的性能开销，所以已经很少被推荐使用了。</strong></p>
+<p><strong>HashMap是应用更加广泛的哈希表实现，行为上大致与hashTable一致，主要区别在于HashMap不是同步的，支持null键和值等。</strong>通常情况下，HashMap进行put或者get操作，可以达到常数时间的性能，所以<strong>它是绝大部分利用键值对存取场景的首选</strong>，比如实现一个用户ID和用户信息对应的运行时存储。</p>
+<p>TreeMap则是基于红黑树的一种提供顺序访问的Map，和HashMap不同，它的get、put、remove之类操作都是O(log(n))的时间复杂度，具体顺序可以由指定的Comparator(<em>Comparator接口， 强行对某个对象 <strong>collection</strong> 进行<strong>整体排序</strong>的比较函数</em>)来决定，或者根据键的自然顺序来判断。</p>
+<h1 id="12、如何保证容器是线程安全的？ConcurrentHashMap如何实现高效地线程安全？"><a href="#12、如何保证容器是线程安全的？ConcurrentHashMap如何实现高效地线程安全？" class="headerlink" title="12、如何保证容器是线程安全的？ConcurrentHashMap如何实现高效地线程安全？"></a>12、如何保证容器是线程安全的？ConcurrentHashMap如何实现高效地线程安全？</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/31/SpringBoot/" rel="prev" title="SpringBoot入门">
+      <i class="fa fa-chevron-left"></i> SpringBoot入门
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/01/Apache%20Spark/" rel="next" title="Apache Spark">
+      Apache Spark <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E5%AF%B9Java%E5%B9%B3%E5%8F%B0%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">1、对Java平台的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81Java%E6%98%AF%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E5%90%97%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">2、Java是解释执行吗？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81Exception%E4%B8%8EError%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">3、Exception与Error的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81NoClassDefFoundError%E4%B8%8EClassNotFoundException%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">4、NoClassDefFoundError与ClassNotFoundException的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81final%E3%80%81finally%E3%80%81finalize%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">5、final、finally、finalize有什么不同？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6%E3%80%81String%E3%80%81StringBuffer%E3%80%81StringBuilder%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">6、String、StringBuffer、StringBuilder有什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7%E3%80%81%E8%B0%88%E8%B0%88Java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%EF%BC%8C%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E6%98%AF%E5%9F%BA%E4%BA%8E%E4%BB%80%E4%B9%88%E5%8E%9F%E7%90%86%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">7、谈谈Java反射机制，动态代理是基于什么原理？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9%E3%80%81int%E5%92%8CInteger%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">9、int和Integer有什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10%E3%80%81%E5%AF%B9%E6%AF%94Vector%E3%80%81ArrayList%E3%80%81LinkedList%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">10、对比Vector、ArrayList、LinkedList有何区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11%E3%80%81%E5%AF%B9%E6%AF%94Hashtable%E3%80%81HashMap%E3%80%81TreeMap%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-number">10.</span> <span class="nav-text">11、对比Hashtable、HashMap、TreeMap有什么不同？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12%E3%80%81%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%AE%B9%E5%99%A8%E6%98%AF%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%EF%BC%9FConcurrentHashMap%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%95%88%E5%9C%B0%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%EF%BC%9F"><span class="nav-number">11.</span> <span class="nav-text">12、如何保证容器是线程安全的？ConcurrentHashMap如何实现高效地线程安全？</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description">思考+笔记</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

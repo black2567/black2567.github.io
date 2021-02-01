@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1.Linux中运行springboot的jar文件123456&#x2F;&#x2F; 直接在控制台进行启动，缺点就是控制台关闭项目也就关闭了。java -jar bootdo.jar&#x2F;&#x2F; 这种方式可以运行在后台,但是如果推出了shell的话，那也会挂java -jar &#x2F;bootdo-2.0.0.jar &gt; bootdolog.file 2&gt;&amp;1 &amp;&#x2F;&#x2F; 加上nohup的话，即使推出s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="长夜未央">
+<meta property="og:url" content="http://example.com/2021/02/01/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="长夜未央">
+<meta property="og:description" content="1.Linux中运行springboot的jar文件123456&#x2F;&#x2F; 直接在控制台进行启动，缺点就是控制台关闭项目也就关闭了。java -jar bootdo.jar&#x2F;&#x2F; 这种方式可以运行在后台,但是如果推出了shell的话，那也会挂java -jar &#x2F;bootdo-2.0.0.jar &gt; bootdolog.file 2&gt;&amp;1 &amp;&#x2F;&#x2F; 加上nohup的话，即使推出s">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:/admin/Desktop/笔记/Spring笔记/images/1574144911.png">
+<meta property="article:published_time" content="2021-02-01T13:45:42.819Z">
+<meta property="article:modified_time" content="2020-07-19T03:09:09.211Z">
+<meta property="article:tag" content="study">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/admin/Desktop/笔记/Spring笔记/images/1574144911.png">
+
+<link rel="canonical" href="http://example.com/2021/02/01/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 长夜未央</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">长夜未央</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/01/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="思考+笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="长夜未央">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 21:45:42" itemprop="dateCreated datePublished" datetime="2021-02-01T21:45:42+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-19 11:09:09" itemprop="dateModified" datetime="2020-07-19T11:09:09+08:00">2020-07-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-Linux中运行springboot的jar文件"><a href="#1-Linux中运行springboot的jar文件" class="headerlink" title="1.Linux中运行springboot的jar文件"></a>1.Linux中运行springboot的jar文件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接在控制台进行启动，缺点就是控制台关闭项目也就关闭了。</span></span><br><span class="line">java -jar bootdo.jar</span><br><span class="line"><span class="comment">// 这种方式可以运行在后台,但是如果推出了shell的话，那也会挂</span></span><br><span class="line">java -jar /bootdo-<span class="number">2.0</span><span class="number">.0</span>.jar &gt; bootdolog.file <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line"><span class="comment">// 加上nohup的话，即使推出shell，也不影响。</span></span><br><span class="line">nohup java -jar /bootdo-<span class="number">2.0</span><span class="number">.0</span>.jar &gt; bootdolog.file <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">启动：</span><br><span class="line">    nohup java -jar absen_report.jar --spring.profiles.active=prd /etc/<span class="keyword">null</span> &amp;</span><br><span class="line">    nohup java -jar absen_report.jar &gt; reportLog.file <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br><span class="line">关闭：</span><br><span class="line">    ps -ef | grep absen_report.jar | grep -v grep | awk <span class="string">&#x27;&#123; print $2 &#125;&#x27;</span></span><br><span class="line">    得到端口号</span><br><span class="line">    kill 端口号</span><br></pre></td></tr></table></figure>
+<h1 id="2-如何反编译java的class文件"><a href="#2-如何反编译java的class文件" class="headerlink" title="2.如何反编译java的class文件"></a>2.如何反编译java的class文件</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javap -c 文件名</span><br></pre></td></tr></table></figure>
+<p><img src="D:\admin\Desktop\笔记\Spring笔记\images\1574144911.png" alt="image-20191119142843831"></p>
+<h1 id="3-查询日志"><a href="#3-查询日志" class="headerlink" title="3.查询日志"></a>3.查询日志</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f name.log</span><br></pre></td></tr></table></figure>
+<h1 id="4-常用的tar解压命令"><a href="#4-常用的tar解压命令" class="headerlink" title="4.常用的tar解压命令"></a>4.常用的tar解压命令</h1><p>常用的tar解压命令总结下，当作备忘：</p>
+<p>tar</p>
+<p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
+<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
+<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<p># tar -cf all.tar *.jpg<br>这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</p>
+<p># tar -rf all.tar *.gif<br>这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。</p>
+<p># tar -uf all.tar logo.gif<br>这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。</p>
+<p># tar -tf all.tar<br>这条命令是列出all.tar包中所有文件，-t是列出文件的意思</p>
+<p># tar -xf all.tar<br>这条命令是解出all.tar包中所有文件，-x是解开的意思</p>
+<p>压缩</p>
+<ul>
+<li>tar –cvf jpg.tar *.jpg 将目录里所有jpg文件打包成tar.jpg</li>
+<li>tar –czf jpg.tar.gz *.jpg  将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz</li>
+<li>tar –cjf jpg.tar.bz2 *.jpg 将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</li>
+<li>tar –cZf jpg.tar.Z *.jpg  将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</li>
+<li>rar a jpg.rar *.jpg rar格式的压缩，需要先下载rar for linux</li>
+<li>zip jpg.zip *.jpg  zip格式的压缩，需要先下载zip for linux </li>
+</ul>
+<p>解压</p>
+<ul>
+<li>tar –xvf file.tar 解压 tar包</li>
+<li>tar -xzvf file.tar.gz 解压tar.gz</li>
+<li>tar -xjvf file.tar.bz2  解压 tar.bz2</li>
+<li>tar –xZvf file.tar.Z  解压tar.Z</li>
+<li>unrar e file.rar 解压rar</li>
+<li>unzip file.zip 解压zip</li>
+</ul>
+<p>总结</p>
+<ol>
+<li>*.tar 用 tar –xvf 解压</li>
+<li>*.gz 用 gzip -d或者gunzip 解压</li>
+<li><em>.tar.gz和</em>.tgz 用 tar –xzf 解压</li>
+<li>*.bz2 用 bzip2 -d或者用bunzip2 解压</li>
+<li>*.tar.bz2用tar –xjf 解压</li>
+<li>*.Z 用 uncompress 解压</li>
+<li>*.tar.Z 用tar –xZf 解压</li>
+<li>*.rar 用 unrar e解压</li>
+<li>*.zip 用 unzip 解压</li>
+</ol>
+<p>linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩。</p>
+<p>1．命令格式：</p>
+<p>tar[必要参数][选择参数][文件] </p>
+<p>2．命令功能：</p>
+<p>用来压缩和解压文件。tar本身不具有压缩功能。他是调用压缩功能实现的 </p>
+<p>3．命令参数：</p>
+<p>必要参数有如下：</p>
+<p>-A 新增压缩文件到已存在的压缩</p>
+<p>-B 设置区块大小</p>
+<p>-c 建立新的压缩文件</p>
+<p>-d 记录文件的差别</p>
+<p>-r 添加文件到已经压缩的文件</p>
+<p>-u 添加改变了和现有的文件到已经存在的压缩文件</p>
+<p>-x 从压缩的文件中提取文件</p>
+<p>-t 显示压缩文件的内容</p>
+<p>-z 支持gzip解压文件</p>
+<p>-j 支持bzip2解压文件</p>
+<p>-Z 支持compress解压文件</p>
+<p>-v 显示操作过程</p>
+<p>-l 文件系统边界设置</p>
+<p>-k 保留原有文件不覆盖</p>
+<p>-m 保留文件不被覆盖</p>
+<p>-W 确认压缩文件的正确性</p>
+<p>可选参数如下：</p>
+<p>-b 设置区块数目</p>
+<p>-C 切换到指定目录</p>
+<p>-f 指定压缩文件</p>
+<p>–help 显示帮助信息</p>
+<p>–version 显示版本信息</p>
+<p>4．常见解压/压缩命令</p>
+<p>tar<br>解包：tar xvf FileName.tar<br>打包：tar cvf FileName.tar DirName<br>（注：tar是打包，不是压缩！）</p>
+<p>.gz<br>解压1：gunzip FileName.gz<br>解压2：gzip -d FileName.gz<br>压缩：gzip FileName</p>
+<p>.tar.gz 和 .tgz<br>解压：tar zxvf FileName.tar.gz<br>压缩：tar zcvf FileName.tar.gz DirName</p>
+<p>.bz2<br>解压1：bzip2 -d FileName.bz2<br>解压2：bunzip2 FileName.bz2<br>压缩： bzip2 -z FileName</p>
+<p>.tar.bz2<br>解压：tar jxvf FileName.tar.bz2<br>压缩：tar jcvf FileName.tar.bz2 DirName</p>
+<p>.bz<br>解压1：bzip2 -d FileName.bz<br>解压2：bunzip2 FileName.bz<br>压缩：未知</p>
+<p>.tar.bz<br>解压：tar jxvf FileName.tar.bz<br>压缩：未知</p>
+<p>.Z<br>解压：uncompress FileName.Z<br>压缩：compress FileName</p>
+<p>.tar.Z<br>解压：tar Zxvf FileName.tar.Z<br>压缩：tar Zcvf FileName.tar.Z DirName</p>
+<p>.zip<br>解压：unzip FileName.zip<br>压缩：zip FileName.zip DirName</p>
+<p>.rar<br>解压：rar x FileName.rar<br>压缩：rar a FileName.rar DirName </p>
+<p>5．使用实例</p>
+<p>实例1：将文件全部打包成tar包</p>
+<p>命令：</p>
+<p>tar -cvf log.tar log2012.log</p>
+<p>tar -zcvf log.tar.gz log2012.log</p>
+<p>tar -jcvf log.tar.bz2 log2012.log</p>
+<h1 id="5-linux的zip压缩"><a href="#5-linux的zip压缩" class="headerlink" title="5.linux的zip压缩"></a>5.linux的zip压缩</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -q -r zipName /dock/ebook</span><br></pre></td></tr></table></figure>
+<p>zipName为压缩后文件名</p>
+<p>/dock/ebook为压缩的路径</p>
+<h1 id="6-centos7重启网络"><a href="#6-centos7重启网络" class="headerlink" title="6.centos7重启网络"></a>6.centos7重启网络</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br><span class="line"></span><br><span class="line">systemctl restart network.service</span><br></pre></td></tr></table></figure>
+<h1 id="7-Centos7虚拟机网络配置"><a href="#7-Centos7虚拟机网络配置" class="headerlink" title="7.Centos7虚拟机网络配置"></a>7.Centos7虚拟机网络配置</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/quintind/article/details/79437838">https://blog.csdn.net/quintind/article/details/79437838</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiehd313/article/details/80814584">https://blog.csdn.net/xiehd313/article/details/80814584</a></p>
+<p>网络配置文件路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
+<p>ens33的UUID号的修改方法<br>A、可输入如下命令获得新UUID号</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># uuidgen ens33</span></span><br><span class="line">223bdb47-2fed-4773-b984-5f5733e61904</span><br></pre></td></tr></table></figure>
+<p>B、将获得的UUID号填入网络配置文件ifcfg-ens33</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">....</span><br><span class="line">NAME=ens33</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=yes</span><br><span class="line">UUID=223bdb47-2fed-4773-b984-5f5733e61904</span><br></pre></td></tr></table></figure>
+<p>C、重启虚拟机</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network.service</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/01/leetcode%E5%8A%9B%E6%89%A3/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/01/Linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B02/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Linux%E4%B8%AD%E8%BF%90%E8%A1%8Cspringboot%E7%9A%84jar%E6%96%87%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">1.Linux中运行springboot的jar文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%A6%82%E4%BD%95%E5%8F%8D%E7%BC%96%E8%AF%91java%E7%9A%84class%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">2.如何反编译java的class文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97"><span class="nav-number">3.</span> <span class="nav-text">3.查询日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%B8%B8%E7%94%A8%E7%9A%84tar%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">4.常用的tar解压命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-linux%E7%9A%84zip%E5%8E%8B%E7%BC%A9"><span class="nav-number">5.</span> <span class="nav-text">5.linux的zip压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-centos7%E9%87%8D%E5%90%AF%E7%BD%91%E7%BB%9C"><span class="nav-number">6.</span> <span class="nav-text">6.centos7重启网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Centos7%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">7.Centos7虚拟机网络配置</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name"></p>
+  <div class="site-description" itemprop="description">思考+笔记</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
